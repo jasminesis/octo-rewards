@@ -1,8 +1,7 @@
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     username TEXT,
-    password TEXT,
-    email TEXT NOT NULL UNIQUE
+    password TEXT
 );
 CREATE TABLE IF NOT EXISTS expenses (
     id SERIAL PRIMARY KEY,

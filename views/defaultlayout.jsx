@@ -43,10 +43,10 @@ class DefaultLayout extends React.Component {
 								<a class='nav-item nav-link' href='#'>
 									New <span class='sr-only'>(current)</span>
 								</a>
-								<a class='nav-item nav-link' href='#'>
+								<a class='nav-item nav-link' href='/register'>
 									Register
 								</a>
-								<a class='nav-item nav-link' href='#'>
+								<a class='nav-item nav-link' href='/login'>
 									Login
 								</a>
 							</div>

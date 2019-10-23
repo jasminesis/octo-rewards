@@ -45,7 +45,30 @@ module.exports = (dbPoolInstance) => {
         });
     };
 
+    let registerNew = (registerInfo, callback) => {
+
+        let query = 'INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *';
+        const newUserArr = [registerInfo.username, sha256(registerInfo.password)]
+        console.log("newUserArr", newUserArr)
+
+        dbPoolInstance.query(query, newUserArr, (error, queryResult) => {
+            if (error) {
+                console.log("nooooo")
+                console.log(error)
+                callback(error, null);
+            } else {
+                if (queryResult.rows.length > 0) {
+                    callback(null, queryResult);
+                } else {
+                    console.log("coming here to the dark")
+                    callback(null, null);
+                }
+            }
+        });
+    };
+
     return {
         loggingIn,
+        registerNew,
     };
 };
