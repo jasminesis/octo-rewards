@@ -3,7 +3,7 @@ module.exports = (app, allModels) => {
     // // require the controller
     const homeControllerCallbacks = require('./controllers/home')(allModels);
     const usersControllerCallbacks = require('./controllers/users')(allModels);
-    // const expensesControllerCallbacks = require('./controllers/expenses')(allModels);
+    const expensesControllerCallbacks = require('./controllers/expenses')(allModels);
     // const cardsControllerCallbacks = require('./controllers/cards')(allModels);
 
     // all routes
@@ -16,9 +16,9 @@ module.exports = (app, allModels) => {
     app.post('/register', usersControllerCallbacks.postRegister);
 
 
-    // app.get('/expenses', expensesControllerCallbacks.index);
-    // app.get('/expenses/new', expensesControllerCallbacks.newExpense);
-    // app.post('/expenses', expensesControllerCallbacks.postNewExpense);
+    app.get('/expenses', expensesControllerCallbacks.showAllExpenses);
+    app.get('/expenses/new', expensesControllerCallbacks.newExpense);
+    app.post('/expenses', expensesControllerCallbacks.postNewExpense);
 
     // app.get('/cards', cardsControllerCallbacks.index);
     // app.get('/cards/new', cardsControllerCallbacks.newCard);

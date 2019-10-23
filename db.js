@@ -37,8 +37,8 @@ pool.on('error', function (err) {
 const allUserModelsFunction = require('./models/users');
 const usersModelsObject = allUserModelsFunction(pool);
 
-// const allExpensesModelsFunction = require('./models/expenses');
-// const expensesModelsObject = allExpensesModelsFunction(pool);
+const allExpensesModelsFunction = require('./models/expenses');
+const expensesModelsObject = allExpensesModelsFunction(pool);
 
 // const cardsModelsFunction = require('./models/cards');
 // const cardsModelsObject = cardsModelsFunction(pool);
@@ -56,6 +56,6 @@ module.exports = {
 
 
     users: usersModelsObject,
-    // expenses: expensesModelsObject,
+    expenses: expensesModelsObject,
     // cards: cardsModelsObject,
 };

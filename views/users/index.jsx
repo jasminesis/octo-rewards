@@ -3,19 +3,20 @@ var Layout = require('../defaultlayout');
 
 class Login extends React.Component {
 	render() {
-		console.log('wowowowowo');
-		console.log(this.props.loggedin);
-		if (this.props.loggedin != undefined) {
-			console.log('already logged in');
-			return (
-				<Layout>
-					<div className='text-center col-12 d-flex flex-wrap justify-content-center'>
-						<h2 class='m-3 col-12'>Already logged in</h2>
-					</div>
-				</Layout>
-			);
-		} else {
-			console.log('not logged in');
+		// console.log('wowowowowo');
+		// console.log(this.props.loggedin);
+		// if (this.props.loggedin != undefined) {
+		// 	console.log('already logged in');
+		// 	return (
+		// 		<Layout>
+		// 			<div className='text-center col-12 d-flex flex-wrap justify-content-center'>
+		// 				<h2 class='m-3 col-12'>Already logged in</h2>
+		// 			</div>
+		// 		</Layout>
+		// 	);
+		// } else {
+
+			// console.log('not logged in');
 			return (
 				<Layout>
 					<div className='text-center col-12 d-flex flex-wrap justify-content-center'>
@@ -31,6 +32,7 @@ class Login extends React.Component {
 										<br />
 										<input type='submit' value='Submit' className='m-2' />
 									</form>
+									<a href="/register" ><p>Don't have an account?</p></a>
 								</p>
 							</div>
 						</div>
@@ -39,6 +41,6 @@ class Login extends React.Component {
 			);
 		}
 	}
-}
+// }
 
 module.exports = Login;

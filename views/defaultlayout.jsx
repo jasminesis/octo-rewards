@@ -24,29 +24,29 @@ class DefaultLayout extends React.Component {
 					<title>octo rewards</title>
 				</head>
 				<body>
-					<nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
-						<a class='navbar-brand' href='#'>
+					<nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
+						<a className='navbar-brand' href='#'>
 							octo
 						</a>
 						<button
-							class='navbar-toggler'
+							className='navbar-toggler'
 							type='button'
 							data-toggle='collapse'
 							data-target='#navbarNavAltMarkup'
 							aria-controls='navbarNavAltMarkup'
 							aria-expanded='false'
 							aria-label='Toggle navigation'>
-							<span class='navbar-toggler-icon' />
+							<span className='navbar-toggler-icon' />
 						</button>
-						<div class='navbar-collapse collapse justify-content-center' id='collapsingNavbar'>
-							<div class='navbar-nav'>
-								<a class='nav-item nav-link' href='#'>
-									New <span class='sr-only'>(current)</span>
+						<div className='navbar-collapse collapse justify-content-center' id='collapsingNavbar'>
+							<div className='navbar-nav'>
+								<a className='nav-item nav-link' href='#'>
+									New <span className='sr-only'>(current)</span>
 								</a>
-								<a class='nav-item nav-link' href='/register'>
+								<a className='nav-item nav-link' href='/register'>
 									Register
 								</a>
-								<a class='nav-item nav-link' href='/login'>
+								<a className='nav-item nav-link' href='/login'>
 									Login
 								</a>
 							</div>
