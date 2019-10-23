@@ -21,7 +21,7 @@ module.exports = (db) => {
                 let hashedUsernameCookie = sha256(postLogin[0].username);
                 response.cookie("username", hashedUsernameCookie)
                 response.cookie("loggedIn", postLogin[0].id);
-                response.render('home/userhome')
+                response.redirect('/')
             } else {
                 let message = ['Invalid login details']
                 response.render('users/index', message)
