@@ -21,12 +21,12 @@ class DefaultLayout extends React.Component {
 						crossOrigin='anonymous'
 					/>
 					<link rel='stylesheet' href='/css/theme.css' />
-					<title>octo rewards</title>
+					<title>octo</title>
 				</head>
 				<body>
 					<nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
-						<a className='navbar-brand' href='#'>
-							octo
+						<a className='navbar-brand' href='http://localhost:3000/'>
+							octo rewards
 						</a>
 						<button
 							className='navbar-toggler'
