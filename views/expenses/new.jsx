@@ -31,8 +31,12 @@ class NewExpenses extends React.Component {
 										<option value='card'>Card</option>
 										<option value='cash'>Cash</option>
 									</select>
+									<br />
+									<br />
+									{/* TODO: add cards available to user by user ID, using AJAX and app.get the url */}
 									Card: {' '}
 									<select name='card_id'>
+										<option value='null'></option>
 										<option value='card'>Card</option>
 									</select>
 									<br />
