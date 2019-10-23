@@ -20,7 +20,7 @@ class DefaultLayout extends React.Component {
 						integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO'
 						crossOrigin='anonymous'
 					/>
-					<link rel='stylesheet' href='css/theme.css' />
+					<link rel='stylesheet' href='/css/theme.css' />
 					<title>octo rewards</title>
 				</head>
 				<body>
@@ -40,8 +40,11 @@ class DefaultLayout extends React.Component {
 						</button>
 						<div className='navbar-collapse collapse justify-content-center' id='collapsingNavbar'>
 							<div className='navbar-nav'>
-								<a className='nav-item nav-link' href='#'>
-									New <span className='sr-only'>(current)</span>
+								<a className='nav-item nav-link' href='/expenses'>
+									Expenses <span className='sr-only'>(current)</span>
+								</a>
+								<a className='nav-item nav-link' href='/expenses/new'>
+									New
 								</a>
 								<a className='nav-item nav-link' href='/register'>
 									Register

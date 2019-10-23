@@ -13,7 +13,7 @@ module.exports = (dbPoolInstance) => {
 
         console.log(userId)
         let query = `SELECT * FROM expenses WHERE user_id = '${userId}'`;
-        console.log(query)
+        // console.log(query)
         dbPoolInstance.query(query, (error, queryResult) => {
             if (error) {
 
@@ -36,7 +36,7 @@ module.exports = (dbPoolInstance) => {
         });
     };
 
-    let registerNew = (registerInfo, callback) => {
+    let newExpense = (registerInfo, callback) => {
 
         let query = 'INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *';
         const newUserArr = [registerInfo.username, sha256(registerInfo.password)]
@@ -60,6 +60,6 @@ module.exports = (dbPoolInstance) => {
 
     return {
         getAllExpensesById,
-        registerNew,
+        newExpense,
     };
 };
