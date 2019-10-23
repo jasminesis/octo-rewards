@@ -22,13 +22,15 @@ class Login extends React.Component {
 					<div className='text-center col-12 d-flex flex-wrap justify-content-center'>
 						<div class='card-5 col-6'>
 							<img src='octopus.jpeg' class='card-img-top col-5' alt='...' />
-							<div class='card-body'>
-								<h5 class='card-title'>Log in</h5>
+							<div class='card-body col-12'>
+								<h2 class='card-title display-3'>Log in</h2>
 								<p>
-									<form class='m-3 justify-content-end' method='POST' action='/login'>
-										Username: <input type='text' name='username' required />
+									<form class='m-3' method='POST' action='/login'>
+										<p>Username</p><input type='text' name='username' required />
 										<br />
-										Password: <input type='text' name='password' required />
+										<br />
+										<p>Password</p><input type='text' name='password' required />
+										<br />
 										<br />
 										<input type='submit' value='Submit' className='m-2' />
 									</form>
