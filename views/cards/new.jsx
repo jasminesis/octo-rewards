@@ -13,6 +13,8 @@ class New extends React.Component {
 								<form className='m-3 justify-content-end' method='POST' action='/cards'>
 									Bank: {' '}
 									<select name='bank' id="showBanks">
+									<option value='card'>Select a card...</option>
+
 										<option value='UOB'>UOB</option>
 										<option value='Citi'>Citi</option>
 									</select>

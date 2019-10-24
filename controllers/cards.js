@@ -48,17 +48,16 @@ module.exports = (db) => {
         })
     };
     let getAllCards = (request, response) => {
-        db.cards.getAllCardsModel((error, result) => {
+        let bankName = request.params.bank;
+        db.cards.getCardByBank(bankName, (error, result) => {
             if (result) {
-                console.log('result is~~~~~~~~~~~~~~`', result)
                 const data = {
                     result: result
                 }
                 console.log("data is !!!!!!", data)
-            }
-            if (error) {
-                console.log(error)
+                response.send(data);
             } else {
+                console.log(error)
                 console.log("AH")
             }
         })
