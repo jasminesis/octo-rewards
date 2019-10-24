@@ -12,6 +12,7 @@ class Expenses extends React.Component {
 						<p className='card-text'>
 							{el.title} <br />
 							Bank: {el.bank} <br />
+							Name: {el.name} <br />
 							Description: {el.description} <br />
 							Rules: {el.rules} <br />
 							Billing date: {el.billing_date} <br />

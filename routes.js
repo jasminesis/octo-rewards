@@ -9,6 +9,7 @@ module.exports = (app, allModels) => {
     // all routes
 
     app.get('/', homeControllerCallbacks.index);
+    app.get('/home', homeControllerCallbacks.display)
 
     app.get('/login', usersControllerCallbacks.index);
     app.post('/login', usersControllerCallbacks.login);
