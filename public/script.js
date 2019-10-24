@@ -51,9 +51,10 @@ function addCardOptions() {
     for (var i = 0; i < responseArr.length; i++) {
 
         var cardName = responseArr[i].name;
+        var cardId = responseArr[i].id;
         var option = document.createElement('option');
-        console.log(cardName)
-        option.innerHTML = cardName;
+        option.innerText = cardName;
+        option.value = cardId;
         cardSelector.appendChild(option);
     }
 };

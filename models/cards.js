@@ -38,20 +38,18 @@ module.exports = (dbPoolInstance) => {
         });
     };
 
-    let newCard = (userId, callback) => {
+    let newCard = (cardJoin, callback) => {
 
         let query = 'INSERT INTO card_owners (user_id, card_id) VALUES ($1, $2) RETURNING *';
-        const newCardUser = [];
-        console.log("newCardUser", newCardUser)
 
-        dbPoolInstance.query(query, newCardUser, (error, queryResult) => {
+        dbPoolInstance.query(query, cardJoin, (error, queryResult) => {
             if (error) {
                 console.log("nooooo")
                 console.log(error)
                 callback(error, null);
             } else {
                 if (queryResult.rows.length > 0) {
-                    callback(null, queryResult);
+                    callback(null, queryResult.rows);
                 } else {
                     console.log("coming here to the dark")
                     callback(null, null);

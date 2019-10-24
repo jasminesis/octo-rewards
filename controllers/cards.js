@@ -31,11 +31,10 @@ module.exports = (db) => {
         response.render('cards/new')
     };
     let postNewCard = (request, response) => {
-        // let cardJoin = request.body;
-        let cardJoin = {
-            user_id: 1,
-            card_id: 2
-        }
+        let userId = request.cookies["loggedIn"];
+        let cardId = request.body.card;
+
+        let cardJoin = [userId, cardId]
         console.log("postCard", cardJoin)
 
         db.cards.newCard(cardJoin, (error, postCard) => {
