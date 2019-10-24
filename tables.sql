@@ -14,9 +14,18 @@ CREATE TABLE IF NOT EXISTS expenses (
 );
 CREATE TABLE IF NOT EXISTS cards (
     id SERIAL PRIMARY KEY,
-    title TEXT,
-    description TEXT,
-    rules TEXT,
     bank TEXT,
+    name TEXT,
+    description TEXT,
+    type TEXT,
+    min_spend INTEGER,
+    max_spend INTEGER,
+    base_rate FLOAT,
+    next_rate FLOAT,
     billing_date INTEGER
+);
+CREATE TABLE IF NOT EXISTS card_owners (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER,
+    card_id INTEGER
 );

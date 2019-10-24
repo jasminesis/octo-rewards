@@ -9,14 +9,14 @@ module.exports = (dbPoolInstance) => {
 
     // `dbPoolInstance` is accessible within this function scope
 
-    // TODO: all this is copy pasted so must change
 
-    let getAllCardsById = (userId, callback) => {
+    let getAll = (userId, callback) => {
 
         console.log(userId)
-        let query = `SELECT * FROM expenses WHERE user_id = '${userId}'`;
-        // console.log(query)
-        dbPoolInstance.query(query, (error, queryResult) => {
+        userId = [userId]
+        let query = "SELECT * FROM (SELECT * FROM cards LEFT JOIN card_owners ON cards.id = card_owners.card_id) AS potato WHERE user_id = ($1)";
+        console.log(query)
+        dbPoolInstance.query(query, userId, (error, queryResult) => {
             if (error) {
 
                 // invoke callback function with results after query has executed
@@ -38,13 +38,13 @@ module.exports = (dbPoolInstance) => {
         });
     };
 
-    let newCard = (registerInfo, callback) => {
+    let newCard = (userId, callback) => {
 
-        let query = 'INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *';
-        const newUserArr = [registerInfo.username, sha256(registerInfo.password)]
-        console.log("newUserArr", newUserArr)
+        let query = 'INSERT INTO card_owners (user_id, card_id) VALUES ($1, $2) RETURNING *';
+        const newCardUser = [];
+        console.log("newCardUser", newCardUser)
 
-        dbPoolInstance.query(query, newUserArr, (error, queryResult) => {
+        dbPoolInstance.query(query, newCardUser, (error, queryResult) => {
             if (error) {
                 console.log("nooooo")
                 console.log(error)
@@ -61,7 +61,7 @@ module.exports = (dbPoolInstance) => {
     };
 
     return {
-        getAllCardsById,
+        getAll,
         newCard,
     };
 };

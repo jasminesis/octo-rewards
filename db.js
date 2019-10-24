@@ -40,8 +40,8 @@ const usersModelsObject = allUserModelsFunction(pool);
 const allExpensesModelsFunction = require('./models/expenses');
 const expensesModelsObject = allExpensesModelsFunction(pool);
 
-// const cardsModelsFunction = require('./models/cards');
-// const cardsModelsObject = cardsModelsFunction(pool);
+const cardsModelsFunction = require('./models/cards');
+const cardsModelsObject = cardsModelsFunction(pool);
 
 
 // module exports
@@ -57,5 +57,5 @@ module.exports = {
 
     users: usersModelsObject,
     expenses: expensesModelsObject,
-    // cards: cardsModelsObject,
+    cards: cardsModelsObject,
 };

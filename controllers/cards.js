@@ -11,14 +11,17 @@ module.exports = (db) => {
     let showAllCards = (request, response) => {
         let userId = request.cookies["loggedIn"];
         console.log("cookie user id", userId);
-        db.cards.getAllCardsById(userId, (error, result) => {
+        db.cards.getAll(userId, (error, result) => {
             if (result) {
-                // console.log('result is~~~~~~~~~~~~~~`', result)
+                console.log('result is~~~~~~~~~~~~~~`', result)
                 const data = {
                     result: result
                 }
                 console.log("data is !!!!!!", data)
                 response.render('cards/index', data)
+            }
+            if (error) {
+                console.log(error)
             } else {
                 response.render('users/index')
             }
@@ -28,19 +31,19 @@ module.exports = (db) => {
         response.render('cards/new')
     };
     let postNewCard = (request, response) => {
-        let expenseInfo = request.body;
-        console.log("loginInfo", expenseInfo)
+        // let cardJoin = request.body;
+        let cardJoin = {
+            user_id: 1,
+            card_id: 2
+        }
+        console.log("postCard", cardJoin)
 
-        db.cards.newCard(expenseInfo, (error, postLogin) => {
-            if (postLogin) {
-                console.log("postLogin", postLogin);
-                let hashedUsernameCookie = sha256(postLogin[0].username);
-                response.cookie("username", hashedUsernameCookie)
-                response.cookie("loggedIn", postLogin[0].id);
-                response.render('home/userhome')
+        db.cards.newCard(cardJoin, (error, postCard) => {
+            if (postCard) {
+                console.log("postCard", postCard);
+                response.redirect('/');
             } else {
-                let message = ['Invalid login details']
-                response.render('users/index', message)
+                response.render('users/index')
             }
         })
     };
