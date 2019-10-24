@@ -46,9 +46,6 @@ class DefaultLayout extends React.Component {
 								<a className='nav-item nav-link' href='/expenses/new'>
 									New
 								</a>
-								<a className='nav-item nav-link' href='/register'>
-									Register
-								</a>
 								<a className='nav-item nav-link' href='/login'>
 									Login
 								</a>

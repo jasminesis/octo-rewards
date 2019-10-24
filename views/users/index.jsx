@@ -34,7 +34,7 @@ class Login extends React.Component {
 										<br />
 										<input type='submit' value='Submit' className='m-2' />
 									</form>
-									<a href="/register" ><p>Don't have an account?</p></a>
+									<a href="/register" ><p>Don't have an account yet?</p></a>
 								</p>
 							</div>
 						</div>
