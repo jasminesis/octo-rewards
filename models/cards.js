@@ -60,6 +60,32 @@ module.exports = (dbPoolInstance) => {
         });
     };
 
+    let getCardByBank = (userId, callback) => {
+
+        let query = "SELECT * FROM (SELECT * FROM cards LEFT JOIN card_owners ON cards.id = card_owners.card_id) AS potato WHERE user_id = ($1)";
+        console.log(query)
+        dbPoolInstance.query(query, userId, (error, queryResult) => {
+            if (error) {
+
+                // invoke callback function with results after query has executed
+                callback(error, null);
+
+            } else {
+
+                // invoke callback function with results after query has executed
+
+                if (queryResult.rows.length > 0) {
+                    callback(null, queryResult.rows);
+
+                } else {
+                    callback(null, null);
+                    console.log('invalid - no such id')
+
+                }
+            }
+        });
+    };
+
     return {
         getAll,
         newCard,

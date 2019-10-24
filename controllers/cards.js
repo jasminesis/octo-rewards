@@ -48,6 +48,24 @@ module.exports = (db) => {
         })
     };
 
+    let getCardsByBank = (request, response) => {
+        db.cards.getCardByBank(userId, (error, result) => {
+            if (result) {
+                console.log('result is~~~~~~~~~~~~~~`', result)
+                const data = {
+                    result: result
+                }
+                console.log("data is !!!!!!", data)
+                response.render('cards/index', data)
+            }
+            if (error) {
+                console.log(error)
+            } else {
+                response.render('users/index')
+            }
+        })
+    };
+
 
     /**
      * ===========================================
@@ -58,6 +76,7 @@ module.exports = (db) => {
         index: showAllCards,
         newCard,
         postNewCard,
+        getCardsByBank,
     };
 
 }
