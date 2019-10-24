@@ -6,12 +6,12 @@ class Register extends React.Component {
 		return (
 			<Layout>
 				<div className='text-center col-12 d-flex flex-wrap justify-content-center'>
-					<div class='card-5 col-6'>
-						<img src='octopus.jpeg' class='card-img-top col-5' alt='...' />
-						<div class='card-body'>
-							<h5 class='card-title display-3'>Sign up</h5>
+					<div className='col-6'>
+						<img src='octopus.jpeg' className='card-img-top col-5' alt='...' />
+						<div className='card-body'>
+							<h5 className='card-title display-3'>Sign up</h5>
 							<p>
-								<form class='m-3 justify-content-end' method='POST' action='/register'>
+								<form className='m-3 justify-content-end' method='POST' action='/register'>
 								<p>Username</p><input type='text' name='username' required />
 										<br />
 										<br />

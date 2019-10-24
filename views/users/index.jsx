@@ -10,7 +10,7 @@ class Login extends React.Component {
 		// 	return (
 		// 		<Layout>
 		// 			<div className='text-center col-12 d-flex flex-wrap justify-content-center'>
-		// 				<h2 class='m-3 col-12'>Already logged in</h2>
+		// 				<h2 className='m-3 col-12'>Already logged in</h2>
 		// 			</div>
 		// 		</Layout>
 		// 	);
@@ -20,12 +20,12 @@ class Login extends React.Component {
 			return (
 				<Layout>
 					<div className='text-center col-12 d-flex flex-wrap justify-content-center'>
-						<div class='card-5 col-6'>
-							<img src='octopus.jpeg' class='card-img-top col-5' alt='...' />
-							<div class='card-body col-12'>
-								<h2 class='card-title display-3'>Log in</h2>
+						<div className='col-6'>
+							<img src='octopus.jpeg' className='card-img-top col-5' alt='...' />
+							<div className='card-body col-12'>
+								<h2 className='card-title display-3'>Log in</h2>
 								<p>
-									<form class='m-3' method='POST' action='/login'>
+									<form className='m-3' method='POST' action='/login'>
 										<p>Username</p><input type='text' name='username' required />
 										<br />
 										<br />

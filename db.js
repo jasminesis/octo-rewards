@@ -34,6 +34,9 @@ pool.on('error', function (err) {
 });
 
 // require model files
+const allHomeModelsFunction = require('./models/home');
+const homeModelsObject = allHomeModelsFunction(pool);
+
 const allUserModelsFunction = require('./models/users');
 const usersModelsObject = allUserModelsFunction(pool);
 
@@ -54,7 +57,7 @@ module.exports = {
     // get a reference to end the connection pool at server end
     pool: pool,
 
-
+    home: homeModelsObject,
     users: usersModelsObject,
     expenses: expensesModelsObject,
     cards: cardsModelsObject,
