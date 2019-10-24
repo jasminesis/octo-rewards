@@ -10,7 +10,7 @@ module.exports = (dbPoolInstance) => {
         console.log(userId)
         userId = [userId]
 
-        let query = "SELECT card_id, sum(amount) FROM (SELECT * FROM expenses WHERE user_id = ($1)) AS mushrooms GROUP BY card_id";
+        let query = 'SELECT * FROM cards INNER JOIN (SELECT card_id, sum(amount) FROM (SELECT * FROM expenses WHERE user_id = ($1)) AS mushrooms GROUP BY card_id) AS potatoes ON cards.id = potatoes.card_id';
 
         console.log(query)
 
@@ -32,3 +32,4 @@ module.exports = (dbPoolInstance) => {
         cards,
     };
 };
+

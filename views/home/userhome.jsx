@@ -8,7 +8,7 @@ class Home extends React.Component {
 		
 		let cards = cardsData.map(el => {
 			return (
-				<div className='card col-5 m-2'>
+				<div className='card col-5 m-1'>
 					<div className='card-body'>
 						<h5 className='card-title'>{el.card_id}</h5>
 						<p className='card-text'>
@@ -24,7 +24,7 @@ class Home extends React.Component {
                 <div className='text-center'>
 
                 <h3 className='m-2 display-1'>octo rewards for logged in users</h3>
-                <div className="container col-5">
+                <div className="container col-12">
               {cards}
                 </div>
                 </div>
