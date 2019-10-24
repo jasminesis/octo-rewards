@@ -24,5 +24,5 @@ module.exports = (app, allModels) => {
     app.get('/cards/new', cardsControllerCallbacks.newCard);
     app.post('/cards', cardsControllerCallbacks.postNewCard);
 
-    app.get('/mydata', cardsControllerCallbacks.getCardsByBank)
+    app.get('/mydata', cardsControllerCallbacks.getAllCards)
 };

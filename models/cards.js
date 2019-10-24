@@ -86,8 +86,35 @@ module.exports = (dbPoolInstance) => {
         });
     };
 
+    let getAllCardsModel = (callback) => {
+
+        let query = "SELECT * FROM cards";
+        console.log(query)
+        dbPoolInstance.query(query, (error, queryResult) => {
+            if (error) {
+
+                // invoke callback function with results after query has executed
+                callback(error, null);
+
+            } else {
+
+                // invoke callback function with results after query has executed
+
+                if (queryResult.rows.length > 0) {
+                    callback(null, queryResult.rows);
+
+                } else {
+                    callback(null, null);
+                    console.log('NOOOEOEOOEOEOEOEOEO')
+
+                }
+            }
+        });
+    };
+
     return {
         getAll,
         newCard,
+        getAllCardsModel,
     };
 };
