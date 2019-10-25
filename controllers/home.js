@@ -14,8 +14,10 @@ module.exports = (db) => {
         let userId = request.cookies["loggedIn"];
 
         db.home.cards(userId, (error, data) => {
-            if (data) {
-                const cardData = {data: data}
+            if (userId) {
+                const cardData = {
+                    data: data
+                }
                 console.log("data", cardData);
                 response.render('home/userhome', cardData);
             } else {
