@@ -6,11 +6,11 @@ class NewExpenses extends React.Component {
 		return (
 			<Layout>
 				<div className='text-center col-12 d-flex flex-wrap justify-content-center'>
-					<div class='card-5 col-6'>
-						<div class='card-body'>
-							<h1 class='card-title'>New expense</h1>
+					<div className='card-5 col-6'>
+						<div className='card-body'>
+							<h1 className='card-title'>New expense</h1>
 							<p>
-								<form class='m-3 justify-content-end' method='POST' action='/expenses'>
+								<form className='m-3 justify-content-end' method='POST' action='/expenses'>
 									Amount: <input type='text' name='username' required />
 									<br />
 									<br />
@@ -41,7 +41,7 @@ class NewExpenses extends React.Component {
 									</select>
 									<br />
 									<br />
-									<input type='submit' value='Submit' className='m-2' />
+									<input type='submit' value='Submit' classNameName='m-2' />
 								</form>
 							</p>
 						</div>

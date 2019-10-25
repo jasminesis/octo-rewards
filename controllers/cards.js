@@ -40,7 +40,7 @@ module.exports = (db) => {
         db.cards.newCard(cardJoin, (error, postCard) => {
             if (postCard) {
                 console.log("postCard", postCard);
-                response.redirect('/');
+                response.redirect('/home');
             } else {
                 response.render('users/index')
             }
