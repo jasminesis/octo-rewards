@@ -27,6 +27,7 @@ module.exports = (db) => {
             }
         })
     };
+
     let newCard = (request, response) => {
         response.render('cards/new')
     };
@@ -62,6 +63,34 @@ module.exports = (db) => {
         })
     };
 
+
+    let showCardsForExpensePage = (request, response) => {
+        let cardOrCash = request.params.cardOrCash;
+        console.log("I'm in card controllers - finding card or cash = ", cardOrCash)
+        if (cardOrCash === 'card') {
+            // need to get user ID from scriptofcards.js
+            let userId = document.cookies["loggedIn"];
+            console.log("cookie user id", userId);
+
+            db.cards.getAll(userId, (error, result) => {
+                if (result) {
+                    console.log('result is~~~~~~~~~~~~~~', result)
+                    const data = {
+                        result: result
+                    }
+                    console.log("data is !!!!!!", data)
+                    response.render('cards/index', data)
+                }
+                if (error) {
+                    console.log(error)
+                } else {
+                    response.render('users/index')
+                }
+            })
+        } else {
+            console.log("it's cash")
+        }
+    };
     /**
      * ===========================================
      * Export controller functions as a module
@@ -72,6 +101,7 @@ module.exports = (db) => {
         newCard,
         postNewCard,
         getAllCards,
+        showCardsForExpensePage,
     };
 
 }

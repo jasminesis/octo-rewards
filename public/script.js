@@ -1,7 +1,17 @@
 console.log("Working!")
 
-let bankSelector = document.getElementById('showBanks')
+/*
+ ██████╗ █████╗ ██████╗ ██████╗ ███████╗
+██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔════╝
+██║     ███████║██████╔╝██║  ██║███████╗
+██║     ██╔══██║██╔══██╗██║  ██║╚════██║
+╚██████╗██║  ██║██║  ██║██████╔╝███████║
+ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝
+*/
 
+
+// defining selectors on the new card page
+let bankSelector = document.getElementById('showBanks')
 let cardSelector = document.getElementById('showCardsByBank')
 
 bankSelector.addEventListener('change', optionClicked);
@@ -13,7 +23,8 @@ function optionClicked() {
     // make a new request
     var request = new XMLHttpRequest();
 
-    var responseHandler = function () {
+    // cannot use arrow function because it binds 'this'
+    var responseHandlerForCardPage = function () {
         console.log("response text", this.responseText);
         console.log("status text", this.statusText);
         console.log("status code", this.status);
@@ -25,7 +36,7 @@ function optionClicked() {
     }
 
     // listen for the request response
-    request.addEventListener("load", responseHandler);
+    request.addEventListener("load", responseHandlerForCardPage);
 
     // ready the system by calling open, and specifying the url
     var url = `http://127.0.0.1:3000/mydata/${bankName}`;
@@ -33,7 +44,6 @@ function optionClicked() {
 
     // send the request
     request.send();
-
 };
 
 

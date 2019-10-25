@@ -27,26 +27,27 @@ class NewExpenses extends React.Component {
 									<br />
 									<br />
 									Payment Method: {' '}
-									<select name='payment_method'>
+									<select id="paymentMethod" name='payment_method'>
+										<option>Select an option...</option>
 										<option value='card'>Card</option>
 										<option value='cash'>Cash</option>
 									</select>
 									<br />
 									<br />
-									{/* TODO: add cards available to user by user ID, using AJAX and app.get the url */}
 									Card: {' '}
-									<select name='card_id'>
+									<select id="showAllCards" name='card_id'>
 										<option value='null'></option>
 										<option value='card'>Card</option>
 									</select>
 									<br />
 									<br />
-									<input type='submit' value='Submit' classNameName='m-2' />
+									<input type='submit' value='Submit' className='m-2' />
 								</form>
 							</p>
 						</div>
 					</div>
 				</div>
+				<script src="/scriptofcards.js"></script>
 			</Layout>
 		);
 	}
