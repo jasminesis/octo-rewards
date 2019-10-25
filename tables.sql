@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS expenses (
 CREATE TABLE IF NOT EXISTS cards (
     id SERIAL PRIMARY KEY,
     bank TEXT,
-    name TEXT,
+    name TEXT UNIQUE,
     description TEXT,
     type TEXT,
     min_spend INTEGER,

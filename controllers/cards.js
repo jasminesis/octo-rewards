@@ -65,11 +65,10 @@ module.exports = (db) => {
 
 
     let showCardsForExpensePage = (request, response) => {
-        let cardOrCash = request.params.cardOrCash;
-        console.log("I'm in card controllers - finding card or cash = ", cardOrCash)
-        if (cardOrCash === 'card') {
+        let userId = request.params.userId;
+        console.log("I'm in card controllers - finding card or cash = ", userId)
+        if (userId) {
             // need to get user ID from scriptofcards.js
-            let userId = document.cookies["loggedIn"];
             console.log("cookie user id", userId);
 
             db.cards.getAll(userId, (error, result) => {

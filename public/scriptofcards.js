@@ -18,8 +18,10 @@ function optionClicked() {
 
     let cardOrCash = paymentMethod.value;
     console.log(cardOrCash, "selected");
-
-    document.cookie
+    let cookieObj = str_obj(document.cookie)
+    console.log(cookieObj)
+    let userId = cookieObj.loggedIn;
+    console.log("userId", userId)
 
     // make a new request
     var request = new XMLHttpRequest();
@@ -40,7 +42,7 @@ function optionClicked() {
     request.addEventListener("load", responseHandlerForCardPage);
 
     // ready the system by calling open, and specifying the url
-    var url = `http://127.0.0.1:3000/mydata/expenses/${cardOrCash}`;
+    var url = `http://127.0.0.1:3000/mydata/expenses/${userId}`;
     request.open("GET", url);
 
     // send the request
@@ -69,3 +71,14 @@ function addCardOptions() {
         showAllCards.appendChild(option);
     }
 };
+
+
+function str_obj(str) {
+    str = str.split('; ');
+    var result = {};
+    for (var i = 0; i < str.length; i++) {
+        var cur = str[i].split('=');
+        result[cur[0]] = cur[1];
+    }
+    return result;
+}

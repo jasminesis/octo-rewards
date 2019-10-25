@@ -1,4 +1,3 @@
-INSERT INTO users (username, email) VALUES ('admin', 'admin@email.com');
 INSERT INTO expenses (user_id, amount, category, payment_method, card_id) VALUES 
 (1, 20, 'Dining', 'card', 2), 
 (1, 40, 'Dining', 'card', 2), 
