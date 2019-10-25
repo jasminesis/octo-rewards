@@ -78,12 +78,9 @@ module.exports = (db) => {
                         result: result
                     }
                     console.log("data is !!!!!!", data)
-                    response.render('cards/index', data)
-                }
-                if (error) {
-                    console.log(error)
+                    response.send(data);
                 } else {
-                    response.render('users/index')
+                    console.log("AHHHHHHHHH")
                 }
             })
         } else {
