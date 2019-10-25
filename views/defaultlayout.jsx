@@ -25,7 +25,7 @@ class DefaultLayout extends React.Component {
 				</head>
 				<body>
 					<nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
-						<a className='navbar-brand' href='http://localhost:3000/'>
+						<a className='navbar-brand' href='http://localhost:3000/home'>
 							octo rewards
 						</a>
 						<button
@@ -44,7 +44,13 @@ class DefaultLayout extends React.Component {
 									Expenses <span className='sr-only'>(current)</span>
 								</a>
 								<a className='nav-item nav-link' href='/expenses/new'>
-									New
+									New Expense
+								</a>
+								<a className='nav-item nav-link' href='/cards/'>
+									Cards
+								</a>
+								<a className='nav-item nav-link' href='/cards/new'>
+									New Card
 								</a>
 								<a className='nav-item nav-link' href='/login'>
 									Login

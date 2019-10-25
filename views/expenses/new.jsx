@@ -16,6 +16,7 @@ class NewExpenses extends React.Component {
 									<br />
 									Category:{' '}
 									<select name='category'>
+										<option>Select a Category...</option>
 										<option value='Beauty'>Beauty & Wellness</option>
 										<option value='Dining'>Dining</option>
 										<option value='Entertainment'>Entertainment</option>

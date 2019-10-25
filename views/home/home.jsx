@@ -8,7 +8,8 @@ class Home extends React.Component {
 			backgroundImage: `url(${jumbopic})`,
 			backgroundPosition: 'center',
 			backgroundSize: 'cover',
-			backgroundRepeat: 'no-repeat'
+			backgroundRepeat: 'no-repeat',
+			color: 'white'
 		}
 		return (
 			<Layout>

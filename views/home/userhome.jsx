@@ -5,7 +5,7 @@ class Home extends React.Component {
 	render() {
 		let cardsData = this.props.data;
 		console.log(cardsData);
-		const jumbopic = 'blue.jpeg';
+		const jumbopic = 'watercolour.jpeg';
 		const jumbo = {
 			backgroundImage: `url(${jumbopic})`,
 			backgroundPosition: 'center',
