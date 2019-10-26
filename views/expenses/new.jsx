@@ -11,11 +11,11 @@ class NewExpenses extends React.Component {
 							<h1 className='card-title text-center'>New expense</h1>
 							<p>
 								<form className='m-3' method='POST' action='/expenses'>
-									<div class='form-group'>
+									<div className='form-group'>
 										<label for='exampleFormControlInput1'>Amount</label>
 										<input
 											type='text'
-											class='form-control'
+											className='form-control'
 											id='exampleFormControlInput1'
 											name='amount'
 											required
@@ -24,7 +24,7 @@ class NewExpenses extends React.Component {
 
 									<div className='form-group'>
 										<label for='exampleFormControlSelect1'>Category</label>
-										<select class='form-control' name='category'>
+										<select className='form-control' name='category'>
 											<option>Select a Category...</option>
 											<option value='Beauty'>Beauty & Wellness</option>
 											<option value='Dining'>Dining</option>
@@ -37,7 +37,7 @@ class NewExpenses extends React.Component {
 									</div>
 									<div className='form-group'>
 										<label>Payment Method</label>
-										<select class='form-control' name='payment_method' id='paymentMethod'>
+										<select className='form-control' name='payment_method' id='paymentMethod'>
 											<option>Select an option...</option>
 											<option value='card'>Card</option>
 											<option value='cash'>Cash</option>
@@ -45,7 +45,7 @@ class NewExpenses extends React.Component {
 									</div>
 									<div className='form-group'>
 										<label for='exampleFormControlSelect1'>Card</label>
-										<select class='form-control' id='showAllCards' name='card_id'>
+										<select className='form-control' id='showAllCards' name='card_id'>
 											<option>Select an option...</option>
 										</select>
 									</div>

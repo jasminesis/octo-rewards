@@ -10,9 +10,10 @@ class Expenses extends React.Component {
 					<div className='card-body'>
 						<h5 className='card-title'>Expense</h5>
 						<p className='card-text'>
+							<strong>{el.bank} {el.name}</strong> <br />
 							Amount: ${el.amount} <br />
 							Category: {el.category} <br />
-							Card: {el.card_id} <br />
+							{/* Added on: {el.date_added} */}
 						</p>
 					</div>
 				</div>

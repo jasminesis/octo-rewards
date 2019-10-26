@@ -9,7 +9,12 @@ module.exports = (db) => {
      */
 
     let usersControllerCallbacks = (request, response) => {
-        response.render('users/index');
+        const alreadyLoggedIn = request.cookies["loggedIn"];
+        if (alreadyLoggedIn) {
+            response.render('users/alreadyin')
+        } else {
+            response.render('users/index');
+        }
     };
     let postLogin = (request, response) => {
         let loginInfo = request.body;

@@ -19,8 +19,7 @@ module.exports = (db) => {
                 }
                 console.log("data is !!!!!!", data)
                 response.render('cards/index', data)
-            }
-            if (error) {
+            } else if (error) {
                 console.log(error)
             } else {
                 response.render('users/index')

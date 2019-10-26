@@ -1,7 +1,7 @@
 const express = require('express');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
-
+var cors = require('cors');
 /**
  * ===================================
  * Configurations and set up
@@ -19,6 +19,8 @@ app.use(cookieParser());
 app.use(express.static('public'));
 
 app.use(express.json());
+
+app.use(cors());
 
 app.use(express.urlencoded({
     extended: true

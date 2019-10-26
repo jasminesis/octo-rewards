@@ -13,7 +13,7 @@ class New extends React.Component {
 								<form className='m-3' method='POST' action='/cards'>
 									<div className='form-group'>
 										<label>Bank</label>
-										<select class='form-control' name='bank' id='showBanks'>
+										<select className='form-control' name='bank' id='showBanks'>
 											<option>Select a bank...</option>
 											<option value='UOB'>UOB</option>
 											<option value='Citi'>Citi</option>
@@ -22,7 +22,7 @@ class New extends React.Component {
 
 									<div className='form-group'>
 										<label>Card</label>
-										<select class='form-control' name='card' id='showCardsByBank'>
+										<select className='form-control' name='card' id='showCardsByBank'>
 											<option>Select a card...</option>
 										</select>
 									</div>

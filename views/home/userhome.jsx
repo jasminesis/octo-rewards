@@ -16,15 +16,15 @@ class Home extends React.Component {
 			return (
 				<Layout>
 					<div className='jumbotron jumbotron-fluid' style={jumbo}>
-					<div className='container'>
-						<h1 className='display-4'>OCTO REWARDS for logged in users</h1>
-					</div>
-				</div>
-						<div className='text-center col-12'>
-								<h1 className="display-4 m-5">No cards or expenses yet.</h1>
-								<h2 className=" btn-lg btn btn-outline-info m-3"><a href="/cards/new">Add some cards! >></a></h2>
-								<h2 className=" btn-lg btn btn-outline-info m-3"><a href="/expenses/new">Add a new expense >></a></h2>
+						<div className='container'>
+							<h1 className='display-4'>OCTO REWARDS for logged in users</h1>
 						</div>
+					</div>
+					<div className='text-center col-12'>
+						<h1 className="display-4 m-5">No cards or expenses yet.</h1>
+						<h2 className=" btn-lg btn btn-outline-info m-3"><a href="/cards/new">Add some cards! >></a></h2>
+						<h2 className=" btn-lg btn btn-outline-info m-3"><a href="/expenses/new">Add a new expense >></a></h2>
+					</div>
 				</Layout>
 			);
 		} else {
@@ -44,9 +44,9 @@ class Home extends React.Component {
 							</h5>
 							<p className='card-text'>
 								Spent on this card: ${el.sum} <br />
-								<div class='progress'>
+								<div className='progress'>
 									<div
-										class='progress-bar progress-bar-striped bg-warning'
+										className='progress-bar progress-bar-striped bg-warning'
 										role='progressbar'
 										style={{ width: string }}
 										aria-valuenow={string}
