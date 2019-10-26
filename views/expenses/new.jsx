@@ -12,18 +12,17 @@ class NewExpenses extends React.Component {
 							<p>
 								<form className='m-3' method='POST' action='/expenses'>
 									<div className='form-group'>
-										<label for='exampleFormControlInput1'>Amount</label>
+										<label>Amount</label>
 										<input
-											type='text'
+											type='integer'
 											className='form-control'
-											id='exampleFormControlInput1'
 											name='amount'
 											required
 										/>
 									</div>
 
 									<div className='form-group'>
-										<label for='exampleFormControlSelect1'>Category</label>
+										<label>Category</label>
 										<select className='form-control' name='category'>
 											<option>Select a Category...</option>
 											<option value='Beauty'>Beauty & Wellness</option>
@@ -44,7 +43,7 @@ class NewExpenses extends React.Component {
 										</select>
 									</div>
 									<div className='form-group'>
-										<label for='exampleFormControlSelect1'>Card</label>
+										<label>Card</label>
 										<select className='form-control' id='showAllCards' name='card_id'>
 											<option>Select an option...</option>
 										</select>

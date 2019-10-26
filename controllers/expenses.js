@@ -29,21 +29,21 @@ module.exports = (db) => {
     };
 
 
-    // FIX ADD NEW EXPENSE
     let postNewExpense = (request, response) => {
-        let expenseInfo = request.body;
-        console.log("loginInfo", expenseInfo)
+        let userId = request.cookies["loggedIn"];
+        let expenseInfo = {
+            results: request.body,
+            userId: userId
+        };
+        console.log("expenseInfo", expenseInfo)
 
-        db.expenses.post(expenseInfo, (error, postLogin) => {
-            if (postLogin) {
-                console.log("postLogin", postLogin);
-                let hashedUsernameCookie = sha256(postLogin[0].username);
-                response.cookie("username", hashedUsernameCookie)
-                response.cookie("loggedIn", postLogin[0].id);
-                response.render('home/userhome')
+        db.expenses.newExpense(expenseInfo, (error, postExpense) => {
+            if (postExpense) {
+                console.log("postExpense", postExpense);
+
+                response.render('expenses/new')
             } else {
-                let message = ['Invalid login details']
-                response.render('users/index', message)
+                response.send("Oh shit")
             }
         })
     };

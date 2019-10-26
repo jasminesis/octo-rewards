@@ -8,11 +8,8 @@ class Expenses extends React.Component {
 			return (
 				<div className='card col-5 m-2'>
 					<div className='card-body'>
-						<h5 className='card-title'>Card</h5>
+						<h5 className='card-title'>{el.bank} {el.name}</h5>
 						<p className='card-text'>
-							{el.title} <br />
-							Bank: {el.bank} <br />
-							Name: {el.name} <br />
 							Description: {el.description} <br />
 							Rules: {el.rules} <br />
 							Billing date: {el.billing_date} <br />
