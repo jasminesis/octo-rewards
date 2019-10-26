@@ -24,38 +24,28 @@ class DefaultLayout extends React.Component {
 					<title>octo</title>
 				</head>
 				<body>
-					<nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
+					<nav class='navbar navbar-expand-lg navbar-dark bg-primary text-center d-flex justify-content-center'>
 						<a className='navbar-brand' href='http://localhost:3000/home'>
-							octo rewards
+						octo rewards
 						</a>
-						<button
-							className='navbar-toggler'
-							type='button'
-							data-toggle='collapse'
-							data-target='#navbarNavAltMarkup'
-							aria-controls='navbarNavAltMarkup'
-							aria-expanded='false'
-							aria-label='Toggle navigation'>
-							<span className='navbar-toggler-icon' />
-						</button>
-						<div className='navbar-collapse collapse justify-content-center' id='collapsingNavbar'>
-							<div className='navbar-nav'>
-								<a className='nav-item nav-link' href='/expenses'>
-									Expenses <span className='sr-only'>(current)</span>
+					</nav>
+					<nav className='navbar navbar-light d-flex justify-content-around' style={{padding: '0'}}>
+							<div className='navbar-nav d-flex flex-row'>
+								<a className='nav-item nav-link' style={{'font-size':'0.9rem', 'margin-right':1 + 'rem'}} href='/expenses'>
+									Expenses
 								</a>
-								<a className='nav-item nav-link' href='/expenses/new'>
+								<a className='nav-item nav-link' style={{'font-size':'0.9rem', 'margin-right':1 + 'rem'}} href='/expenses/new'>
 									New Expense
 								</a>
-								<a className='nav-item nav-link' href='/cards/'>
+								<a className='nav-item nav-link' style={{'font-size':'0.9rem', 'margin-right':1 + 'rem'}} href='/cards/'>
 									Cards
 								</a>
-								<a className='nav-item nav-link' href='/cards/new'>
+								<a className='nav-item nav-link' style={{'font-size':'0.9rem', 'margin-right':1 + 'rem'}} href='/cards/new'>
 									New Card
 								</a>
-								<a className='nav-item nav-link' href='/login'>
+								<a className='nav-item nav-link' style={{'font-size':'0.9rem', 'margin-right':1 + 'rem'}} href='/login'>
 									Login
 								</a>
-							</div>
 						</div>
 					</nav>
 

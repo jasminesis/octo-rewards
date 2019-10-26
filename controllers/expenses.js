@@ -27,6 +27,9 @@ module.exports = (db) => {
     let newExpense = (request, response) => {
         response.render('expenses/new')
     };
+
+
+    // FIX ADD NEW EXPENSE
     let postNewExpense = (request, response) => {
         let expenseInfo = request.body;
         console.log("loginInfo", expenseInfo)

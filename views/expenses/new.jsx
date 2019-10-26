@@ -6,7 +6,7 @@ class NewExpenses extends React.Component {
 		return (
 			<Layout>
 				<div className='col-12 d-flex flex-wrap justify-content-center'>
-					<div className='card-5 col-6'>
+					<div className='col-6'>
 						<div className='card-body'>
 							<h1 className='card-title text-center'>New expense</h1>
 							<p>
