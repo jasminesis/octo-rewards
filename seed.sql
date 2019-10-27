@@ -36,7 +36,7 @@ VALUES
 INSERT INTO card_owners (user_id, card_id)
 VALUES
   (1, 1),
-  (1, 2)
+  (1, 2);
 INSERT INTO card_rates (card_id, spend_threshold, rate)
 VALUES
   (1, 0, 0.4),

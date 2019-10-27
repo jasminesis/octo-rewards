@@ -50,7 +50,11 @@ module.exports = (db) => {
             }
         })
     };
-
+    let logout = (request, response) => {
+        response.clearCookie("username")
+        response.clearCookie("loggedIn")
+        response.redirect('/login')
+    }
 
     /**
      * ===========================================
@@ -62,6 +66,7 @@ module.exports = (db) => {
         login: postLogin,
         register,
         postRegister,
+        logout,
     };
 
 }

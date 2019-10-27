@@ -82,3 +82,5 @@ function str_obj(str) {
     }
     return result;
 }
+
+document.getElementById('datePicker').valueAsDate = new Date()

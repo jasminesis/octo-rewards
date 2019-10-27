@@ -48,6 +48,16 @@ class NewExpenses extends React.Component {
 											<option>Select an option...</option>
 										</select>
 									</div>
+									<div className='form-group'>
+										<label>Date</label>
+										<input
+											type='date'
+											className='form-control'
+											name='date'
+											id='datePicker'
+											required
+										/>
+									</div>
 									<input type='submit' value='Submit' className='m-2' />
 								</form>
 							</p>

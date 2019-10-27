@@ -1,4 +1,15 @@
-console.log("Working!")
+console.log(`
+
+███╗   ███╗███████╗ ██████╗ ██╗    ██╗
+████╗ ████║██╔════╝██╔═══██╗██║    ██║
+██╔████╔██║█████╗  ██║   ██║██║ █╗ ██║
+██║╚██╔╝██║██╔══╝  ██║   ██║██║███╗██║
+██║ ╚═╝ ██║███████╗╚██████╔╝╚███╔███╔╝
+╚═╝     ╚═╝╚══════╝ ╚═════╝  ╚══╝╚══╝ 
+                                      
+
+`
+);
 
 /*
  ██████╗ █████╗ ██████╗ ██████╗ ███████╗
@@ -56,7 +67,7 @@ function addCardOptions() {
     var selectShowOption = document.createElement('option');
     selectShowOption.innerText = `Select a card...`;
     cardSelector.appendChild(selectShowOption);
-    console.log("gONNA START ADDING cards nOW ")
+    // console.log("gONNA START ADDING cards nOW ")
 
     for (var i = 0; i < responseArr.length; i++) {
 

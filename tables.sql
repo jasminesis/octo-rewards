@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS expenses (
   id SERIAL PRIMARY KEY,
   user_id INTEGER,
-  date_added DATE NOT NULL DEFAULT CURRENT_DATE,
+  date DATE,
   amount FLOAT,
   category TEXT,
   payment_method TEXT,

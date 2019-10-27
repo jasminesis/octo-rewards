@@ -29,9 +29,9 @@ module.exports = (dbPoolInstance) => {
     };
 
     let newExpense = (expenseInfo, callback) => {
-        let query = 'INSERT INTO expenses (user_id, amount, category, payment_method, card_id) VALUES ($1, $2, $3, $4, $5) RETURNING *';
+        let query = 'INSERT INTO expenses (user_id, date, amount, category, payment_method, card_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *';
         const info = expenseInfo.results;
-        const newExpenseArr = [expenseInfo.userId, info.amount, info.category, info.payment_method, info.card_id]
+        const newExpenseArr = [expenseInfo.userId, info.date, info.amount, info.category, info.payment_method, info.card_id]
         console.log("newExpenseArr", newExpenseArr)
 
         dbPoolInstance.query(query, newExpenseArr, (error, queryResult) => {

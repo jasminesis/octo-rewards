@@ -17,12 +17,12 @@ class Home extends React.Component {
 					<div className='container'>
 						<h1 className='display-4'>OCTO REWARDS</h1>
 						<p className='lead'>
-							This is a modified jumbotron that occupies the entire horizontal space of its parent.
+							Helping you maximise your credit card rewards
 						</p>
 					</div>
 				</div>
 				<div className='text-center'>
-					<h3 className='m-2 display-1'>octo rewards</h3>
+					<h3 className='m-2 display-1'>Hello</h3>
 					<div className='container col-5' />
 				</div>
 			</Layout>
