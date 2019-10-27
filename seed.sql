@@ -14,17 +14,24 @@ INSERT INTO cards (bank, name, description, type, billing_date)
 VALUES
   (
     'UOB',
-    'Lady''s Card',
-    'You''ll earn 10X UNI$ (or 20 miles) per S$5 spent on your chosen category(ies) with no minimum spend required.',
-    'Rewards',
-    20
-  ),
-  (
-    'UOB',
     'One',
     'Great rebate card',
     'Cashback',
     29
+  ),
+  (
+    'Standard Chartered',
+    'Unlimited Cashback',
+    'What it says in the name',
+    'Cashback',
+    2
+  ),
+  (
+    'UOB',
+    'Lady''s Card',
+    'You''ll earn 10X UNI$ (or 20 miles) per S$5 spent on your chosen category(ies) with no minimum spend required.',
+    'Rewards',
+    20
   ),
   (
     'Citi',
@@ -39,10 +46,12 @@ VALUES
   (1, 2);
 INSERT INTO card_rates (card_id, spend_threshold, rate)
 VALUES
-  (1, 0, 0.4),
-  (1, 1000, 4),
-  (2, 500, 0.0333),
-  (2, 1000, 0.0333),
-  (2, 2000, 0.05),
-  (3, 0, 1.2),
-  (3, 3000, 1.5);
+  -- for cashback card rates --> need min spend $0 and rate = 0% if applicable
+  (1, 500, 0.0333),
+  (1, 1000, 0.0333),
+  (1, 2000, 0.05),
+  (2, 0, 0.0015),
+  (3, 0, 4),
+  (3, 1000, 0),
+  (4, 0, 1.2),
+  (4, 3000, 1.5);

@@ -34,3 +34,29 @@ category: earn points
 S$1 = 1.2 Citi Miles on Local spend (no min. spend)
 S$1 = 1.5 Citi Miles on Local spend (min. spend of S$3,000 total retail purchase per statement month,
 S$1 = 2 Citi Miles on Foreign currency spend
+
+// Standard Chartered UNlimited cashback
+
+category: cashback
+
+spend 0, get 1.5% cashback, no cap, no minimum spend
+
+// Citi Cash Back Card
+ category: cashback
+
+ min spend of $888
+ cashback is capped at $25 per category for dining, supermarkets and grocery stores
+ less than min spend = 0.25% and on all other categories - no cap
+
+// HSBC Advance Credit Card
+1.5% cashback with $0 min
+2.5% cashback with $2000 min spend
+capped at 70 per month
+
+// OCBC 365 Credit Card
+$800 min spend
+capped at 80 per month
+
+6% cashback for dining
+3% cashback for groceries and transport and travel and bills
+0.3% cashback on everything else

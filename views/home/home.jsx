@@ -3,13 +3,13 @@ var Layout = require('../defaultlayout');
 
 class Home extends React.Component {
 	render() {
-		const jumbopic = 'blue.jpeg';
+		const jumbopic = 'watercolour.jpeg';
 		const jumbo = {
 			backgroundImage: `url(${jumbopic})`,
 			backgroundPosition: 'center',
 			backgroundSize: 'cover',
 			backgroundRepeat: 'no-repeat',
-			color: 'white'
+			// color: 'white'
 		}
 		return (
 			<Layout>

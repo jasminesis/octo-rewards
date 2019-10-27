@@ -19,7 +19,7 @@ module.exports = (db) => {
                 db.home.getCardRates(userId, (error, cardRates) => {
                     if (cardRates) {
                         const cardData = {
-                            data: data,
+                            data,
                             cardRates,
                         }
                         console.log("data", cardData);

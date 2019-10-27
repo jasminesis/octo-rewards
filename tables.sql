@@ -18,7 +18,8 @@ CREATE TABLE IF NOT EXISTS cards (
   name TEXT UNIQUE,
   description TEXT,
   type TEXT,
-  billing_date INTEGER
+  billing_date INTEGER,
+  max INTEGER
 );
 CREATE TABLE IF NOT EXISTS card_owners (
   id SERIAL PRIMARY KEY,

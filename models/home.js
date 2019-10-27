@@ -37,7 +37,7 @@ module.exports = (dbPoolInstance) => {
         userId = [userId]
         // this query gets the card_rates table for the cards a user has
 
-        let query = 'SELECT card_rates.card_id, card_rates.spend_threshold, card_rates.rate FROM (SELECT * FROM card_owners WHERE user_id = ($1)) AS cards_owned INNER JOIN card_rates ON card_rates.card_id = cards_owned.card_id'
+        let query = 'SELECT card_rates.card_id, card_rates.spend_threshold, card_rates.rate FROM (SELECT * FROM card_owners WHERE user_id = ($1)) AS cards_owned INNER JOIN card_rates ON card_rates.card_id = cards_owned.card_id ORDER BY card_rates.spend_threshold'
 
         console.log(query)
 
