@@ -14,14 +14,22 @@ module.exports = (db) => {
         let userId = request.cookies["loggedIn"];
 
         db.home.cards(userId, (error, data) => {
-            if (userId) {
-                const cardData = {
-                    data: data
-                }
-                console.log("data", cardData);
-                response.render('home/userhome', cardData);
+            if (data) {
+                // get card rates to check spending against thresholds
+                db.home.getCardRates(userId, (error, cardRates) => {
+                    if (cardRates) {
+                        const cardData = {
+                            data: data,
+                            cardRates,
+                        }
+                        console.log("data", cardData);
+                        response.render('home/userhome', cardData);
+                    } else {
+                        response.send("something in home is nullll or wrong")
+                    }
+                })
             } else {
-                response.render('users/index')
+                response.render('home/emptyhome')
             }
         })
     }
