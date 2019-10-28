@@ -77,10 +77,50 @@ module.exports = (dbPoolInstance) => {
             }
         });
     };
+    let getAllcards = (userId, callback) => {
+
+        let query = "SELECT * FROM cards ORDER BY id";
+        console.log(query)
+        dbPoolInstance.query(query, (error, queryResult) => {
+            if (error) {
+                callback(error, null);
+            } else {
+                if (queryResult.rows.length > 0) {
+                    callback(null, queryResult.rows);
+                } else {
+                    callback(null, null);
+                }
+            }
+        });
+    };
+
+    let newAllcard = (cardInfo, callback) => {
+
+        let query = 'INSERT INTO cards (bank, name, description, type, category_based, max, unit) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING * ';
+
+        dbPoolInstance.query(query, cardInfo, (error, queryResult) => {
+            if (error) {
+                console.log("nooooo")
+                console.log(error)
+                callback(error, null);
+            } else {
+                if (queryResult.rows.length > 0) {
+                    callback(null, queryResult.rows);
+                } else {
+                    console.log("coming here to the dark")
+                    callback(null, null);
+                }
+            }
+        });
+    };
+
+
 
     return {
         getAll,
         newCard,
         getCardByBank,
+        getAllcards,
+        newAllcard,
     };
 };

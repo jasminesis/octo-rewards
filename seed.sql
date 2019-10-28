@@ -10,36 +10,66 @@ VALUES
   (1, 20, 'Fashion', 'card', 2),
   (1, 40, 'Dining', 'card', 2),
   (1, 60, 'Dining', 'card', 2);
-INSERT INTO cards (bank, name, description, type, billing_date)
+INSERT INTO cards (
+    bank,
+    name,
+    description,
+    type,
+    category_based,
+    max,
+    unit
+  )
 VALUES
   (
     'UOB',
     'One',
     'Great rebate card',
-    'Cashback',
-    29
+    'Rebate',
+    false,
+    100,
+    '$'
   ),
   (
     'Standard Chartered',
     'Unlimited Cashback',
     'What it says in the name',
     'Cashback',
-    2
+    false,
+    0,
+    '$'
   ),
   (
-    'UOB',
-    'Lady''s Card',
-    'You''ll earn 10X UNI$ (or 20 miles) per S$5 spent on your chosen category(ies) with no minimum spend required.',
-    'Rewards',
-    20
+    'HSBC',
+    'Advance',
+    'a really advanced card from HSBC',
+    'Cashback',
+    false,
+    70,
+    '$'
   ),
   (
-    'Citi',
-    'PremierMiles',
-    'Great foreign currency earnings',
-    'Rewards',
-    7
+    'OCBC',
+    '365',
+    'a card you can use for as many days as its name',
+    'Cashback',
+    true,
+    80,
+    '$'
   );
+-- (
+  --   'UOB',
+  --   'Lady''s Card',
+  --   'You''ll earn 10X UNI$ (or 20 miles) per S$5 spent on your chosen category(ies) with no minimum spend required.',
+  --   'Rewards',
+  --   20
+  -- ),
+  -- (
+  --   'Citi',
+  --   'PremierMiles',
+  --   'Great foreign currency earnings',
+  --   'Rewards',
+  --   7
+  -- );
 INSERT INTO card_owners (user_id, card_id)
 VALUES
   (1, 1),

@@ -1,7 +1,7 @@
 var React = require('react');
 var Layout = require('../defaultlayout');
 
-class Expenses extends React.Component {
+class Cards extends React.Component {
 	render() {
 		console.log('From the index.jsx file', this.props);
 		const cards = this.props.result.map((el) => {
@@ -27,4 +27,4 @@ class Expenses extends React.Component {
 	}
 }
 
-module.exports = Expenses;
+module.exports = Cards;

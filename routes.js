@@ -26,6 +26,13 @@ module.exports = (app, allModels) => {
     app.get('/cards/new', cardsControllerCallbacks.newCard);
     app.post('/cards', cardsControllerCallbacks.postNewCard);
 
+    // all cards
+    app.get('/allcards', cardsControllerCallbacks.showAllcards);
+    app.get('/allcards/new', cardsControllerCallbacks.newAllcard);
+    app.post('/allcards', cardsControllerCallbacks.postNewAllcard);
+
+
+
     app.get('/mydata/:bank', cardsControllerCallbacks.getAllCards)
     app.get('/mydata/expenses/:userId', cardsControllerCallbacks.showCardsForExpensePage)
 
