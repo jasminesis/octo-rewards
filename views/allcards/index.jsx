@@ -3,7 +3,7 @@ var Layout = require('../defaultlayout');
 
 class AllCards extends React.Component {
     render() {
-        console.log('From the index.jsx file for all cards', this.props);
+        console.log('Results from the index.jsx file for all cards', this.props.result);
         const newRow = this.props.result.map((el, index) => {
             return (
 
@@ -16,9 +16,9 @@ class AllCards extends React.Component {
                     <td>{' ' + el.category_based}</td>
                     <td>{el.unit} {el.max}</td>
                     <td><a href={'/allcards/' + el.id + '/edit'}>
-                        <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></td>
+                        <i className="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></td>
                     <td><a href={'/allcards/' + el.id + '/delete'}>
-                        <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a></td>
+                        <i className="fa fa-trash-o fa-lg" aria-hidden="true"></i></a></td>
                 </tr>
 
             );

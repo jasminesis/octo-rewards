@@ -38,6 +38,7 @@ module.exports = (app, allModels) => {
 
 
     app.get('/mydata/:bank', cardsControllerCallbacks.getAllCards)
+    app.get('/mydata/banks/:bank', cardsControllerCallbacks.getAllBanks)
     app.get('/mydata/expenses/:userId', cardsControllerCallbacks.showCardsForExpensePage)
 
 };

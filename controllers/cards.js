@@ -113,8 +113,7 @@ module.exports = (db) => {
         db.cards.newAllcard(cardInfo, (error, postCard) => {
             if (postCard) {
                 console.log("postCard", postCard);
-                response.send("posting!")
-                // response.redirect('/allcards');
+                response.redirect('/allcards');
             } else {
                 console.log("nope, no result??")
             }
@@ -160,7 +159,20 @@ module.exports = (db) => {
             }
         })
     }
-
+    let getAllBanks = (request, response) => {
+        db.cards.getAllcards((error, result) => {
+            if (result) {
+                const data = {
+                    result: result
+                }
+                console.log("data for all cards", data)
+                // response.send("something should be showing!")
+                response.send(data)
+            } else if (error) {
+                console.log(error)
+            }
+        })
+    };
 
 
     /**
@@ -181,6 +193,7 @@ module.exports = (db) => {
         editAllcard,
         showDeleteAllcard,
         deleteAllcard,
+        getAllBanks,
     };
 
 }

@@ -47,7 +47,7 @@ class EditAllcard extends React.Component {
                                         <label>Type</label>
                                         <select className='form-control' name='type'>
                                             <option>Select a Type</option>
-                                            <option value='Cashback'>Cashback</option>
+                                            <option selected value='Cashback'>Cashback</option>
                                             <option value='Rebate'>Rebate</option>
                                             <option value='Reward'>Reward</option>
                                         </select>
@@ -57,7 +57,7 @@ class EditAllcard extends React.Component {
                                         <select className='form-control' name='category_based'>
                                             <option>Select true or false</option>
                                             <option value='true'>True</option>
-                                            <option value='false'>False</option>
+                                            <option selected value='false'>False</option>
                                         </select>
                                     </div>
                                     <div className='form-group'>
