@@ -1,5 +1,7 @@
 var React = require('react');
 var Layout = require('../defaultlayout');
+const moment = require('moment');
+
 
 class Expenses extends React.Component {
 	render() {
@@ -11,7 +13,7 @@ class Expenses extends React.Component {
 					<td>{el.name}</td>
 					<td>{el.amount}</td>
 					<td>{el.category}</td>
-					<td>{el.date_added}</td>
+					<td>{moment(el.date).format("DD MMM YY")}</td>
 					<td><a href={'/expenses/' + el.id + '/edit'}>
 						<i className="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></td>
 					<td><a href={'/expenses/' + el.id + '/delete'}>
