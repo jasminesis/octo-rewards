@@ -151,7 +151,7 @@ module.exports = (dbPoolInstance) => {
         })
     }
     let allcardDelete = (id, callback) => {
-        let query = 'DELETE cards WHERE id = $1 RETURNING *';
+        let query = 'DELETE FROM cards WHERE id = $1 RETURNING *';
 
         let cardId = [id]
         dbPoolInstance.query(query, cardId, (error, queryResult) => {

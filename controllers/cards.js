@@ -139,9 +139,20 @@ module.exports = (db) => {
             }
         })
     }
+    let showDeleteAllcard = (request, response) => {
+        db.cards.allcardById(request.params.id, (err, result) => {
+            if (result) {
+                console.log('HERE!!!')
+                response.render('allcards/delete', result)
+            } else {
+                console.log(err)
+            }
+        })
+    }
     let deleteAllcard = (request, response) => {
         db.cards.allcardDelete(request.params.id, (err, result) => {
             if (result) {
+                console.log('THERE!!!!!')
                 response.redirect('/allcards')
             } else {
                 console.log(err)
@@ -168,6 +179,7 @@ module.exports = (db) => {
         postNewAllcard,
         showEditAllcard,
         editAllcard,
+        showDeleteAllcard,
         deleteAllcard,
     };
 
