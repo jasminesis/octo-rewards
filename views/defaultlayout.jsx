@@ -20,11 +20,10 @@ class DefaultLayout extends React.Component {
 						integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO'
 						crossOrigin='anonymous'
 					/>
-					<link rel='stylesheet' href='/css/theme.css' />
 					<title>octo</title>
 				</head>
 				<body>
-					<nav className='navbar navbar-expand-lg navbar-dark bg-primary text-center d-flex justify-content-center'>
+					<nav className='navbar navbar-expand-lg navbar-dark bg-dark text-center d-flex justify-content-center'>
 						<a className='navbar-brand' href='http://localhost:3000/home'>
 							octo rewards
 						</a>

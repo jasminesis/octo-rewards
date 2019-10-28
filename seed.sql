@@ -55,3 +55,9 @@ VALUES
   (3, 1000, 0),
   (4, 0, 1.2),
   (4, 3000, 1.5);
+INSERT INTO users (username, password)
+VALUES
+  (
+    'calvin',
+    'a7fe9dcbcafa8559ea3617a3a21af7b8aa06c2badf7322c67c5ee6b6f880cdb1'
+  );

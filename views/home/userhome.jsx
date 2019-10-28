@@ -16,22 +16,35 @@ class Home extends React.Component {
 		let cardRates = this.props.cardRates;
 
 		let cards = cardsData.map((el) => {
-			let allThresholds = cardRates.filter(rate => rate.card_id === el.card_id)
-			// checks if the card id is the one currently being checked, and if the amount is less than the spend threshold
 
-			let currentThreshold = allThresholds.find(thing => el.sum < thing.spend_threshold);
+			// all thresholds is all the rates for the card being checked
+			let allThresholds = cardRates.filter(rate => rate.card_id === el.card_id)
+			let lastIndex = allThresholds.length - 1;
+			console.log(lastIndex)
+
+			// current threshold is the next threshold above the current spend 
+			let currentThreshold = allThresholds.find(current => el.sum < current.spend_threshold);
+
+			// if there is a threshold above the current spend 
 			if (currentThreshold !== undefined) {
 
 				console.log('allThresholds', allThresholds)
 				console.log('currentThreshold', currentThreshold)
+
+				// making the progress bar percentage
 				let string = el.sum / currentThreshold.spend_threshold * 100 + '%';
+
+				// TODO: what about when the user has spent over the last threshold??
 
 				return (
 					<div className='card col-5 m-1'>
 						<div className='card-body'>
-							<h4 className='card-title'>
+							<h3 className='card-title'>
 								<strong>{el.bank}</strong> {el.name}
-							</h4>
+							</h3>
+							<h5>
+								{el.type}
+							</h5>
 							<p className='card-text'>
 								Spent on this card: ${el.sum} <br />
 								<div className='progress'>
@@ -48,7 +61,7 @@ class Home extends React.Component {
 								<div className='d-flex justify-content-end m-1'>
 									<span>Threshold: ${currentThreshold.spend_threshold}</span>
 								</div>
-								{/* Spend ${allThresholds.spend_threshold} to get a rate of {allThresholds[1].rate * 100}% */}
+								Spend ${allThresholds[lastIndex].spend_threshold} to get a rate of {allThresholds[lastIndex].rate * 100}%
 							</p>
 						</div>
 					</div>
@@ -60,6 +73,9 @@ class Home extends React.Component {
 							<h4 className='card-title'>
 								<strong>{el.bank}</strong> {el.name}
 							</h4>
+							<h5>
+								{el.type}
+							</h5>
 							<p className='card-text'>
 								Spent on this card: ${el.sum} <br />
 								<span>Threshold: $0</span>
