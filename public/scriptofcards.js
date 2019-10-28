@@ -64,7 +64,7 @@ function addCardOptions() {
     for (var i = 0; i < responseArr.length; i++) {
 
         var cardName = responseArr[i].name;
-        var cardId = responseArr[i].id;
+        var cardId = responseArr[i].card_id;
         var option = document.createElement('option');
         option.innerText = cardName;
         option.value = cardId;

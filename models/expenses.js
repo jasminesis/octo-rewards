@@ -12,9 +12,10 @@ module.exports = (dbPoolInstance) => {
     let getAllExpensesById = (userId, callback) => {
 
         console.log(userId)
-        let query = `SELECT * FROM (SELECT cards.bank, cards.name, expenses.* FROM cards INNER JOIN expenses ON expenses.card_id = cards.id) AS potato WHERE user_id = '${userId}' ORDER BY name`;
+        let query = `SELECT * FROM (SELECT cards.bank, cards.name, expenses.* FROM cards INNER JOIN expenses ON expenses.card_id = cards.id) AS potato WHERE user_id = $1 ORDER BY name`;
+        let ID = [userId]
         // console.log(query)
-        dbPoolInstance.query(query, (error, queryResult) => {
+        dbPoolInstance.query(query, ID, (error, queryResult) => {
             if (error) {
                 callback(error, null);
             } else {
