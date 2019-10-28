@@ -77,7 +77,7 @@ module.exports = (dbPoolInstance) => {
             }
         });
     };
-    let getAllcards = (userId, callback) => {
+    let getAllcards = (callback) => {
 
         let query = "SELECT * FROM cards ORDER BY id";
         console.log(query)
@@ -98,7 +98,10 @@ module.exports = (dbPoolInstance) => {
 
         let query = 'INSERT INTO cards (bank, name, description, type, category_based, max, unit) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING * ';
 
-        dbPoolInstance.query(query, cardInfo, (error, queryResult) => {
+        let card = cardInfo
+        let newCard = [card.bank, card.name, card.description, card.type, card.category_based, card.max, card.unit]
+
+        dbPoolInstance.query(query, newCard, (error, queryResult) => {
             if (error) {
                 console.log("nooooo")
                 console.log(error)

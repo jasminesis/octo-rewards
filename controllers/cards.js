@@ -88,13 +88,13 @@ module.exports = (db) => {
     };
 
     let showAllcards = (request, response) => {
-        console.log("cookie user id", userId);
         db.cards.getAllcards((error, result) => {
             if (result) {
                 const data = {
                     result: result
                 }
                 console.log("data for all cards", data)
+                // response.send("something should be showing!")
                 response.render('allcards/index', data)
             } else if (error) {
                 console.log(error)
@@ -106,14 +106,15 @@ module.exports = (db) => {
         response.render('allcards/new')
     };
     let postNewAllcard = (request, response) => {
-        let cardInfo = request.body.card;
+        let cardInfo = request.body;
 
         console.log("cardId", cardInfo)
 
         db.cards.newAllcard(cardInfo, (error, postCard) => {
             if (postCard) {
                 console.log("postCard", postCard);
-                response.redirect('/home');
+                response.send("posting!")
+                // response.redirect('/allcards');
             } else {
                 console.log("nope, no result??")
             }
