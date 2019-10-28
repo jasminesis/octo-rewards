@@ -15,6 +15,10 @@ class AllCards extends React.Component {
                     <td>{el.type}</td>
                     <td>{' ' + el.category_based}</td>
                     <td>{el.unit} {el.max}</td>
+                    <td><a href={'/allcards/' + el.id + '/edit'}>
+                        <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></td>
+                    <td><a href={'/allcards/' + el.id + '/delete'}>
+                        <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a></td>
                 </tr>
 
             );
@@ -33,6 +37,8 @@ class AllCards extends React.Component {
                                 <th scope="col">Type</th>
                                 <th scope="col">Category based?</th>
                                 <th scope="col">Maximum cap</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
                             </tr>
                         </thead>
                         <tbody>

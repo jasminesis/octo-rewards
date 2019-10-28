@@ -110,13 +110,64 @@ module.exports = (dbPoolInstance) => {
                 if (queryResult.rows.length > 0) {
                     callback(null, queryResult.rows);
                 } else {
-                    console.log("coming here to the dark")
                     callback(null, null);
                 }
             }
         });
     };
+    let allcardById = (id, callback) => {
+        let query = 'SELECT * FROM cards WHERE id = $1';
 
+        let cardId = [id]
+        dbPoolInstance.query(query, cardId, (error, queryResult) => {
+            if (error) {
+                console.log("nooooo")
+                console.log(error)
+                callback(error, null);
+            } else {
+                if (queryResult.rows.length > 0) {
+                    callback(null, queryResult.rows);
+                } else {
+                    callback(null, null);
+                }
+            }
+        })
+    }
+    let allcardUpdate = (info, id, callback) => {
+        let query = 'UPDATE cards SET bank = $1, name = $2, description = $3, type = $4, category_based = $5, max = $6, unit = $7 where id = $8 RETURNING *';
+
+        let updatedCard = [info.bank, info.name, info.description, info.type, info.category_based, info.max, info.unit, id]
+        dbPoolInstance.query(query, updatedCard, (error, queryResult) => {
+            if (error) {
+                console.log(error)
+                callback(error, null);
+            } else {
+                if (queryResult.rows.length > 0) {
+                    callback(null, queryResult.rows);
+                } else {
+                    callback(null, null);
+                }
+            }
+        })
+    }
+    let allcardDelete = (id, callback) => {
+        let query = 'DELETE cards WHERE id = $1 RETURNING *';
+
+        let cardId = [id]
+        dbPoolInstance.query(query, cardId, (error, queryResult) => {
+            if (error) {
+                console.log("nooooo")
+                console.log(error)
+                callback(error, null);
+            } else {
+                if (queryResult.rows.length > 0) {
+                    callback(null, queryResult.rows);
+                } else {
+                    callback(null, null);
+                }
+            }
+        })
+    }
 
 
     return {
@@ -125,5 +176,8 @@ module.exports = (dbPoolInstance) => {
         getCardByBank,
         getAllcards,
         newAllcard,
+        allcardById,
+        allcardUpdate,
+        allcardDelete,
     };
 };

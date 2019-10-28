@@ -31,6 +31,10 @@ module.exports = (app, allModels) => {
     app.get('/allcards/new', cardsControllerCallbacks.newAllcard);
     app.post('/allcards', cardsControllerCallbacks.postNewAllcard);
 
+    app.get('/allcards/:id/edit', cardsControllerCallbacks.showEditAllcard)
+    app.put('/allcards/:id', cardsControllerCallbacks.editAllcard)
+    app.get('/allcards/:id/delete', cardsControllerCallbacks.deleteAllcard)
+    app.delete('/allcards/:id')
 
 
     app.get('/mydata/:bank', cardsControllerCallbacks.getAllCards)

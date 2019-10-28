@@ -120,8 +120,35 @@ module.exports = (db) => {
             }
         })
     };
-
-
+    let showEditAllcard = (request, response) => {
+        db.cards.allcardById(request.params.id, (err, result) => {
+            if (result) {
+                response.render('allcards/edit', result)
+            } else {
+                console.log(err)
+            }
+        })
+    }
+    let editAllcard = (request, response) => {
+        db.cards.allcardUpdate(request.body, request.params.id, (err, result) => {
+            if (result) {
+                response.redirect('/allcards/')
+            } else {
+                console.log(err)
+                console.log('stuck at edit allcard')
+            }
+        })
+    }
+    let deleteAllcard = (request, response) => {
+        db.cards.allcardDelete(request.params.id, (err, result) => {
+            if (result) {
+                response.redirect('/allcards')
+            } else {
+                console.log(err)
+                console.log('couldn\'t delete ')
+            }
+        })
+    }
 
 
 
@@ -139,6 +166,9 @@ module.exports = (db) => {
         showAllcards,
         newAllcard,
         postNewAllcard,
+        showEditAllcard,
+        editAllcard,
+        deleteAllcard,
     };
 
 }

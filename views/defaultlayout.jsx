@@ -14,10 +14,12 @@ class DefaultLayout extends React.Component {
 						integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO'
 						crossOrigin='anonymous'
 					/>
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
 					<title>octo</title>
 				</head>
 				<body>
-					<nav className='navbar navbar-expand-lg navbar-dark text-center d-flex justify-content-center' style={navStyle}>
+					<nav className='navbar navbar-expand-lg navbar-dark bg-dark text-center d-flex justify-content-center' style={navStyle}>
 						<a className='navbar-brand' href='http://localhost:3000/home'>
 							octo rewards
 						</a>
