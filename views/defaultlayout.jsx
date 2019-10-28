@@ -3,13 +3,7 @@ var React = require('react');
 class DefaultLayout extends React.Component {
 	render() {
 		const navStyle = {
-			backgroundColor: '#78a9cc'
-		};
-
-		const imgStyle = {
-			width: '100%',
-			maxWidth: '400px',
-			textAlign: 'center'
+			backgroundColor: '#3381b8'
 		};
 		return (
 			<html>
@@ -23,7 +17,7 @@ class DefaultLayout extends React.Component {
 					<title>octo</title>
 				</head>
 				<body>
-					<nav className='navbar navbar-expand-lg navbar-dark bg-dark text-center d-flex justify-content-center'>
+					<nav className='navbar navbar-expand-lg navbar-dark text-center d-flex justify-content-center' style={navStyle}>
 						<a className='navbar-brand' href='http://localhost:3000/home'>
 							octo rewards
 						</a>
