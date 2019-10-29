@@ -15,12 +15,14 @@ class DefaultLayout extends React.Component {
 						crossOrigin='anonymous'
 					/>
 					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+					<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"/>
+					<link href="style.css" rel="stylesheet"/>
 
 					<title>octo</title>
 				</head>
 				<body>
 					<nav className='navbar navbar-expand-lg navbar-dark bg-dark text-center d-flex justify-content-center' style={navStyle}>
-						<a className='navbar-brand' href='http://localhost:3000/home'>
+						<a className='navbar-brand' href='http://localhost:3000/home' style={{'fontFamily': 'Raleway'}}>
 							octo rewards
 						</a>
 					</nav>
