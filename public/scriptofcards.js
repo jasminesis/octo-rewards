@@ -7,7 +7,8 @@ console.log("BAA BAA")
 ██╔══╝   ██╔██╗ ██╔═══╝ ██╔══╝  ██║╚██╗██║╚════██║██╔══╝  ╚════██║
 ███████╗██╔╝ ██╗██║     ███████╗██║ ╚████║███████║███████╗███████║
 ╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═══╝╚══════╝╚══════╝╚══════╝
- */
+*/
+document.getElementById('datePicker').valueAsDate = new Date()
 
 let paymentMethod = document.getElementById('paymentMethod');
 let showAllCards = document.getElementById('showAllCards');
@@ -82,5 +83,3 @@ function str_obj(str) {
     }
     return result;
 }
-
-document.getElementById('datePicker').valueAsDate = new Date()

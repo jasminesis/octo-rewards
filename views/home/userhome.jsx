@@ -11,6 +11,13 @@ class Home extends React.Component {
 			backgroundSize: 'cover',
 			backgroundRepeat: 'no-repeat'
 		}
+		const imgStyle = {
+			maxWidth: '50%',
+			width: 'auto',
+			height: 'auto',
+			display: 'block',
+			margin: '10px auto'
+	}
 
 		let cardsData = this.props.data;
 		let cardRates = this.props.cardRates;
@@ -52,6 +59,8 @@ class Home extends React.Component {
 							<h3 className='card-title'>
 								<strong>{el.bank}</strong> {el.name}
 							</h3>
+							<img src={el.image_url} className="card-img" style={imgStyle} alt="..."></img>
+
 							<h5>
 								{el.type}
 							</h5>
@@ -86,6 +95,8 @@ class Home extends React.Component {
 							<h4 className='card-title'>
 								<strong>{el.bank}</strong> {el.name}
 							</h4>
+							<img src={el.image_url} className="card-img" style={imgStyle} alt="..."></img>
+
 							<h5>
 								{el.type}
 							</h5>
@@ -110,6 +121,8 @@ class Home extends React.Component {
 							<h3 className='card-title'>
 								<strong>{el.bank}</strong> {el.name}
 							</h3>
+							<img src={el.image_url} className="card-img" style={imgStyle} alt="..."></img>
+
 							<h5>
 								{el.type}
 							</h5>

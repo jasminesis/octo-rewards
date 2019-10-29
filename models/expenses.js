@@ -51,8 +51,66 @@ module.exports = (dbPoolInstance) => {
         });
     };
 
+
+    let getExpenseById = (id, callback) => {
+        let query = 'SELECT * FROM expenses WHERE id = $1';
+
+        let cardId = [id]
+        dbPoolInstance.query(query, cardId, (error, queryResult) => {
+            if (error) {
+                console.log("nooooo")
+                console.log(error)
+                callback(error, null);
+            } else {
+                if (queryResult.rows.length > 0) {
+                    callback(null, queryResult.rows);
+                } else {
+                    callback(null, null);
+                }
+            }
+        })
+    }
+    let expenseUpdate = (info, id, callback) => {
+        let query = 'UPDATE expenses SET date = $1, amount = $2, category = $3, payment_method = $4, card_id = $5 where id = $6 RETURNING *';
+
+        let updatedExpense = [info.date, info.amount, info.category, info.payment_method, info.card_id, id]
+        dbPoolInstance.query(query, updatedExpense, (error, queryResult) => {
+            if (error) {
+                console.log(error)
+                callback(error, null);
+            } else {
+                if (queryResult.rows.length > 0) {
+                    callback(null, queryResult.rows);
+                } else {
+                    callback(null, null);
+                }
+            }
+        })
+    }
+    let deleteExpense = (id, callback) => {
+        let query = 'DELETE FROM expenses WHERE id = $1 RETURNING *';
+
+        let cardId = [id]
+        dbPoolInstance.query(query, cardId, (error, queryResult) => {
+            if (error) {
+                console.log("nooooo")
+                console.log(error)
+                callback(error, null);
+            } else {
+                if (queryResult.rows.length > 0) {
+                    callback(null, queryResult.rows);
+                } else {
+                    callback(null, null);
+                }
+            }
+        })
+    }
+
     return {
         getAllExpensesById,
         newExpense,
+        getExpenseById,
+        expenseUpdate,
+        deleteExpense,
     };
 };

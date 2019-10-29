@@ -25,8 +25,8 @@ class Expenses extends React.Component {
 			<Layout>
 				<h1 className='text-center m-3 display-3'>All expenses</h1>
 				<div className='d-flex justify-content-center'>
-					<table class="table col-10">
-						<thead class="thead-light">
+					<table className="table col-10">
+						<thead className="thead-light">
 							<tr>
 								<th scope="col">Bank</th>
 								<th scope="col">Name</th>

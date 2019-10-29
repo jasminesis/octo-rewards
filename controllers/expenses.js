@@ -49,6 +49,57 @@ module.exports = (db) => {
     };
 
 
+    let showExpenseById = (request, response) => {
+        db.expenses.getExpenseById(request.params.id, (err, result) => {
+            if (result) {
+                console.log(result)
+                response.render('expenses/one', result)
+            } else {
+                console.log(err)
+            }
+        })
+    }
+    let showEditExpense = (request, response) => {
+        db.expenses.getExpenseById(request.params.id, (err, result) => {
+            if (result) {
+                response.render('expenses/edit', result)
+            } else {
+                console.log(err)
+            }
+        })
+    }
+    let editExpense = (request, response) => {
+        db.expenses.expenseUpdate(request.body, request.params.id, (err, result) => {
+            if (result) {
+                response.redirect('/expenses/')
+            } else {
+                console.log(err)
+                console.log('stuck at edit expense')
+            }
+        })
+    }
+    let showDeleteExpense = (request, response) => {
+        db.expenses.getExpenseById(request.params.id, (err, result) => {
+            if (result) {
+                console.log('HERE!!!')
+                response.render('expenses/delete', result)
+            } else {
+                console.log(err)
+            }
+        })
+    }
+    let deleteExpense = (request, response) => {
+        db.expenses.deleteExpense(request.params.id, (err, result) => {
+            if (result) {
+                console.log('Deleting')
+                response.redirect('/expenses')
+            } else {
+                console.log(err)
+                console.log('couldn\'t delete ')
+            }
+        })
+    }
+
     /**
      * ===========================================
      * Export controller functions as a module
@@ -58,6 +109,11 @@ module.exports = (db) => {
         showAllExpenses,
         newExpense,
         postNewExpense,
+        showExpenseById,
+        showEditExpense,
+        editExpense,
+        showDeleteExpense,
+        deleteExpense
     };
 
 }

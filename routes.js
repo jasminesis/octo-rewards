@@ -21,6 +21,11 @@ module.exports = (app, allModels) => {
     app.get('/expenses', expensesControllerCallbacks.showAllExpenses);
     app.get('/expenses/new', expensesControllerCallbacks.newExpense);
     app.post('/expenses', expensesControllerCallbacks.postNewExpense);
+    // app.get('/expenses/:id', expensesControllerCallbacks.showExpenseById);
+    app.get('/expenses/:id/edit', expensesControllerCallbacks.showEditExpense);
+    app.put('/expenses/:id', expensesControllerCallbacks.editExpense);
+    app.get('/expenses/:id/delete', expensesControllerCallbacks.showDeleteExpense);
+    app.delete('/expenses/:id', expensesControllerCallbacks.deleteExpense);
 
     app.get('/cards', cardsControllerCallbacks.index);
     app.get('/cards/new', cardsControllerCallbacks.newCard);
