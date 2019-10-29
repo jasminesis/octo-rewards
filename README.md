@@ -29,6 +29,7 @@ psql -d DATABASE_NAME -U USERNAME -f seed.sql
 # Wireframes
 
 # ERD diagram
+![crow diagram](https://github.com/jasminesis/octo-rewards/blob/master/documents/octo.png)
 
 # User Stories
 
