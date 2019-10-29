@@ -43,7 +43,11 @@ module.exports = (db) => {
 
         db.users.registerNew(registerInfo, (error, postRegister) => {
             if (postRegister) {
-                response.send("registered")
+                console.log("this is it", postRegister)
+                let hashedUsernameCookie = sha256(postRegister[0].username);
+                response.cookie("username", hashedUsernameCookie)
+                response.cookie("loggedIn", postRegister[0].id);
+                response.redirect('/')
             } else {
                 console.log(postRegister)
                 response.send("Couldn't register")

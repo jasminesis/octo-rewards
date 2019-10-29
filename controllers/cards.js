@@ -10,21 +10,26 @@ module.exports = (db) => {
 
     let index = (request, response) => {
         let userId = request.cookies["loggedIn"];
-        console.log("cookie user id", userId);
-        db.cards.getAll(userId, (error, result) => {
-            if (result) {
-                console.log('result is~~~~~~~~~~~~~~`', result)
-                const data = {
-                    result: result
+        if (userId) {
+            // console.log("cookie user id", userId);
+            db.cards.getAll(userId, (error, result) => {
+                if (result) {
+                    // console.log('result is~~~~~~~~~~~~~~`', result)
+                    const data = {
+                        result: result
+                    }
+                    console.log("data is !!!!!!", data)
+                    response.render('cards/index', data)
+                } else if (error) {
+                    console.log(error)
+                } else {
+                    let message = ['something']
+                    response.render('cards/index', message)
                 }
-                console.log("data is !!!!!!", data)
-                response.render('cards/index', data)
-            } else if (error) {
-                console.log(error)
-            } else {
-                response.render('users/index')
-            }
-        })
+            })
+        } else {
+            response.redirect('/login')
+        }
     };
 
     let newCard = (request, response) => {
@@ -32,19 +37,22 @@ module.exports = (db) => {
     };
     let postNewCard = (request, response) => {
         let userId = request.cookies["loggedIn"];
-        let cardId = request.body.card;
+        if (userId) {
+            let cardId = request.body.card;
+            let cardJoin = [userId, cardId]
+            console.log("postCard", cardJoin)
 
-        let cardJoin = [userId, cardId]
-        console.log("postCard", cardJoin)
-
-        db.cards.newCard(cardJoin, (error, postCard) => {
-            if (postCard) {
-                console.log("postCard", postCard);
-                response.redirect('/home');
-            } else {
-                response.render('users/index')
-            }
-        })
+            db.cards.newCard(cardJoin, (error, postCard) => {
+                if (postCard) {
+                    console.log("postCard", postCard);
+                    response.redirect('/cards');
+                } else {
+                    response.send("posting card failed")
+                }
+            })
+        } else {
+            response.render('users/index')
+        }
     };
     let getAllCards = (request, response) => {
         let bankName = request.params.bank;

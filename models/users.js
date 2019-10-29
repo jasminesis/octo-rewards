@@ -58,7 +58,7 @@ module.exports = (dbPoolInstance) => {
                 callback(error, null);
             } else {
                 if (queryResult.rows.length > 0) {
-                    callback(null, queryResult);
+                    callback(null, queryResult.rows);
                 } else {
                     console.log("coming here to the dark")
                     callback(null, null);

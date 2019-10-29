@@ -19,8 +19,16 @@ class EmptyHome extends React.Component {
                 </div>
                 <div className='text-center col-12'>
                     <h1 className="display-4 m-5">No cards or expenses yet.</h1>
-                    <h2 className=" btn-lg btn btn-outline-info m-3"><a href="/cards/new">Add some cards! >> &raquo;</a></h2>
-                    <h2 className=" btn-lg btn btn-outline-info m-3"><a href="/expenses/new">Add a new expense >></a></h2>
+                    <a href='/cards/new'>
+							<button type='button' class='btn btn-outline-dark btn-lg m-3'>
+								Add some cards! &raquo;
+							</button>
+						</a>
+                    <a href='/expenses/new'>
+							<button type='button' class='btn btn-outline-dark btn-lg m-3'>
+								Add some expenses &raquo;
+							</button>
+						</a>
                 </div>
             </Layout>
         );

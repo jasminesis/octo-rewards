@@ -10,19 +10,23 @@ module.exports = (db) => {
 
     let showAllExpenses = (request, response) => {
         let userId = request.cookies["loggedIn"];
-        console.log("cookie user id", userId);
-        db.expenses.getAllExpensesById(userId, (error, result) => {
-            if (result) {
-                // console.log('result is~~~~~~~~~~~~~~`', result)
-                const data = {
-                    result: result
+        if (userId) {
+            // console.log("cookie user id", userId);
+            db.expenses.getAllExpensesById(userId, (error, result) => {
+                if (result) {
+                    // console.log('result is~~~~~~~~~~~~~~`', result)
+                    const data = {
+                        result: result
+                    }
+                    console.log("data is !!!!!!", data)
+                    response.render('expenses/index', data)
+                } else {
+                    response.render('expenses/fail')
                 }
-                console.log("data is !!!!!!", data)
-                response.render('expenses/index', data)
-            } else {
-                response.render('users/index')
-            }
-        })
+            })
+        } else {
+            response.redirect('/login')
+        }
     };
     let newExpense = (request, response) => {
         response.render('expenses/new')
@@ -31,21 +35,25 @@ module.exports = (db) => {
 
     let postNewExpense = (request, response) => {
         let userId = request.cookies["loggedIn"];
-        let expenseInfo = {
-            results: request.body,
-            userId: userId
-        };
-        console.log("expenseInfo", expenseInfo)
+        if (userId) {
+            let expenseInfo = {
+                results: request.body,
+                userId: userId
+            };
+            console.log("expenseInfo", expenseInfo)
 
-        db.expenses.newExpense(expenseInfo, (error, postExpense) => {
-            if (postExpense) {
-                console.log("postExpense", postExpense);
+            db.expenses.newExpense(expenseInfo, (error, postExpense) => {
+                if (postExpense) {
+                    console.log("postExpense", postExpense);
 
-                response.render('expenses/new')
-            } else {
-                response.send("Oh shit")
-            }
-        })
+                    response.redirect('/expenses')
+                } else {
+                    response.send("Adding new expense failed")
+                }
+            })
+        } else {
+            response.redirect('/login')
+        }
     };
 
 

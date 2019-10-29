@@ -26,17 +26,17 @@ class DefaultLayout extends React.Component {
 					</nav>
 					<nav className='navbar navbar-light d-flex justify-content-around' style={{ padding: '0' }}>
 						<div className='navbar-nav d-flex flex-row'>
-							<a className='nav-item nav-link' style={{ 'fontSize': '0.9rem', 'marginRight': 1 + 'rem' }} href='/expenses'>
-								Expenses
-								</a>
-							<a className='nav-item nav-link' style={{ 'fontSize': '0.9rem', 'marginRight': 1 + 'rem' }} href='/expenses/new'>
-								New Expense
-								</a>
 							<a className='nav-item nav-link' style={{ 'fontSize': '0.9rem', 'marginRight': 1 + 'rem' }} href='/cards/'>
 								Cards
 								</a>
 							<a className='nav-item nav-link' style={{ 'fontSize': '0.9rem', 'marginRight': 1 + 'rem' }} href='/cards/new'>
 								New Card
+								</a>
+							<a className='nav-item nav-link' style={{ 'fontSize': '0.9rem', 'marginRight': 1 + 'rem' }} href='/expenses'>
+								Expenses
+								</a>
+							<a className='nav-item nav-link' style={{ 'fontSize': '0.9rem', 'marginRight': 1 + 'rem' }} href='/expenses/new'>
+								New Expense
 								</a>
 
 							<a className='nav-item nav-link' style={{ 'fontSize': '0.9rem', 'marginRight': 1 + 'rem' }} href='/login'>
