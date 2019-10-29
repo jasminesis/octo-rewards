@@ -29,14 +29,11 @@ class DefaultLayout extends React.Component {
 							<a className='nav-item nav-link' style={{ 'fontSize': '0.9rem', 'marginRight': 1 + 'rem' }} href='/cards/'>
 								Cards
 								</a>
-							<a className='nav-item nav-link' style={{ 'fontSize': '0.9rem', 'marginRight': 1 + 'rem' }} href='/cards/new'>
-								New Card
-								</a>
 							<a className='nav-item nav-link' style={{ 'fontSize': '0.9rem', 'marginRight': 1 + 'rem' }} href='/expenses'>
 								Expenses
 								</a>
-							<a className='nav-item nav-link' style={{ 'fontSize': '0.9rem', 'marginRight': 1 + 'rem' }} href='/expenses/new'>
-								New Expense
+							<a className='nav-item nav-link' style={{ 'fontSize': '0.9rem', 'marginRight': 1 + 'rem' }} href='/allcards'>
+								All Cards
 								</a>
 
 							<a className='nav-item nav-link' style={{ 'fontSize': '0.9rem', 'marginRight': 1 + 'rem' }} href='/login'>

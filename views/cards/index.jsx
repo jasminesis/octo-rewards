@@ -45,6 +45,13 @@ class Cards extends React.Component {
 			<Layout>
 				<h1 className='text-center m-3 display-3'>All cards</h1>
 				<div className='text-center col-12 d-flex flex-wrap justify-content-center'>{cards}</div>
+				<div className='text-center col-12'>
+						<a href='/cards/new'>
+							<button type='button' class='btn btn-outline-dark btn-lg m-3'>
+								Add a new card &raquo;
+							</button>
+						</a>
+					</div>
 			</Layout>
 		);
 	}

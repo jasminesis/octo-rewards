@@ -48,6 +48,13 @@ class Expenses extends React.Component {
 						<tbody>{expenses}</tbody>
 					</table>
 				</div>
+				<div className='text-center col-12'>
+						<a href='/expenses/new'>
+							<button type='button' class='btn btn-outline-dark btn-lg m-3'>
+								Add a new expense &raquo;
+							</button>
+						</a>
+					</div>
 			</Layout>
 		);
 	}
