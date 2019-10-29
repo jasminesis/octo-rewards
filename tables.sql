@@ -20,13 +20,14 @@ CREATE TABLE IF NOT EXISTS cards (
   type TEXT,
   category_based BOOLEAN,
   max FLOAT,
-  unit TEXT
+  unit TEXT,
+  image_url text
 );
 CREATE TABLE IF NOT EXISTS card_owners (
   id SERIAL PRIMARY KEY,
   user_id INTEGER,
   card_id INTEGER,
-  billing_date INTEGER,
+  billing_date INTEGER
 );
 CREATE TABLE IF NOT EXISTS card_rates (
   id SERIAL PRIMARY KEY,

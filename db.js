@@ -19,7 +19,7 @@ if (process.env.DATABASE_URL) {
 
 } else {
     configs = {
-        user: 'jasmine',
+        user: 'jasminesis',
         host: '127.0.0.1',
         database: 'octo',
         port: 5432

@@ -3,6 +3,7 @@ var Layout = require('../defaultlayout');
 
 class Login extends React.Component {
 	render() {
+		console.log(this.props)
 		return (
 			<Layout>
 				<div className='text-center col-12 d-flex flex-wrap justify-content-center'>

@@ -80,6 +80,16 @@ class EditAllcard extends React.Component {
                                             required
                                         />
                                     </div>
+                                    <div className='form-group'>
+                                        <label>Card image link</label>
+                                        <input
+                                            type='text'
+                                            className='form-control'
+                                            name='image_url'
+                                            defaultValue={card.image_url}
+                                            required
+                                        />
+                                    </div>
                                     <input type='submit' value='Submit' className='m-2' />
                                 </form>
                             </p>

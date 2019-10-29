@@ -96,10 +96,10 @@ module.exports = (dbPoolInstance) => {
 
     let newAllcard = (cardInfo, callback) => {
 
-        let query = 'INSERT INTO cards (bank, name, description, type, category_based, max, unit) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING * ';
+        let query = 'INSERT INTO cards (bank, name, description, type, category_based, max, unit, image_url) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING * ';
 
         let card = cardInfo
-        let newCard = [card.bank, card.name, card.description, card.type, card.category_based, card.max, card.unit]
+        let newCard = [card.bank, card.name, card.description, card.type, card.category_based, card.max, card.unit, card.image_url]
 
         dbPoolInstance.query(query, newCard, (error, queryResult) => {
             if (error) {
@@ -134,9 +134,9 @@ module.exports = (dbPoolInstance) => {
         })
     }
     let allcardUpdate = (info, id, callback) => {
-        let query = 'UPDATE cards SET bank = $1, name = $2, description = $3, type = $4, category_based = $5, max = $6, unit = $7 where id = $8 RETURNING *';
+        let query = 'UPDATE cards SET bank = $1, name = $2, description = $3, type = $4, category_based = $5, max = $6, unit = $7, image_url = $8 where id = $9 RETURNING *';
 
-        let updatedCard = [info.bank, info.name, info.description, info.type, info.category_based, info.max, info.unit, id]
+        let updatedCard = [info.bank, info.name, info.description, info.type, info.category_based, info.max, info.unit, info.image_url, id]
         dbPoolInstance.query(query, updatedCard, (error, queryResult) => {
             if (error) {
                 console.log(error)

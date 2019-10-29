@@ -28,8 +28,8 @@ module.exports = (db) => {
                 response.cookie("loggedIn", postLogin[0].id);
                 response.redirect('/')
             } else {
-                let message = ['Invalid login details']
-                response.render('users/index', message)
+                let message = 'Please try again'
+                response.redirect('login', message)
             }
         })
     };

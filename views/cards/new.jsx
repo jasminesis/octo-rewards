@@ -15,8 +15,6 @@ class New extends React.Component {
 										<label>Bank</label>
 										<select className='form-control' name='bank' id='showBanks'>
 											<option>Select a bank...</option>
-											<option value='UOB'>UOB</option>
-											<option value='Citi'>Citi</option>
 										</select>
 									</div>
 
