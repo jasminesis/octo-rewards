@@ -79,13 +79,13 @@ INSERT INTO card_owners (user_id, card_id)
 VALUES
   (1, 1),
   (1, 2);
+  -- for cashback card rates --> need min spend $0 and rate = 0% if applicable
 INSERT INTO card_rates (card_id, spend_threshold, rate)
 VALUES
-  -- for cashback card rates --> need min spend $0 and rate = 0% if applicable
-  (1, 500, 0.0333),
-  (1, 1000, 0.0333),
-  (1, 2000, 0.05),
-  (2, 0, 0.0015),
+  (1, 500, 3.33),
+  (1, 1000, 3.33),
+  (1, 2000, 5),
+  (2, 0, 1.5),
   (3, 0, 4),
   (3, 1000, 0),
   (4, 0, 1.2),

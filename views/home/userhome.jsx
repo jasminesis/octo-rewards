@@ -80,8 +80,10 @@ class Home extends React.Component {
 								<div className='d-flex justify-content-end m-1'>
 									<span>Threshold: ${nextThreshold.spend_threshold}</span>
 								</div>
-								<p>current rate: {currentThreshold.rate}</p>
-								Spend ${allThresholds[lastIndex].spend_threshold} to get a rate of {allThresholds[lastIndex].rate * 100}%
+								<p>current rate: {currentThreshold.rate}%</p>
+								{el.type}: ${el.sum * (currentThreshold.rate)/100} <br/>
+
+								Spend ${allThresholds[lastIndex].spend_threshold} to get a rate of {allThresholds[lastIndex].rate}%
 							</p>
 						</div>
 					</div>
@@ -105,7 +107,7 @@ class Home extends React.Component {
 								<div class="alert alert-info" role="alert">
 									No minimum spend
 								</div>
-								{el.type}: ${el.sum * allThresholds[0].rate}
+								{el.type}: ${el.sum * (allThresholds[0].rate)/100}
 							</p>
 						</div>
 					</div>
@@ -146,7 +148,7 @@ class Home extends React.Component {
 								<div className='d-flex justify-content-end m-1'>
 									<span>Threshold: ${allThresholds[lastIndex].spend_threshold}</span>
 								</div>
-								{el.type}: ${el.sum * allThresholds[lastIndex].rate}
+								{el.type}: ${el.sum * (allThresholds[lastIndex].rate)/100}
 							</p>
 						</div>
 					</div>
