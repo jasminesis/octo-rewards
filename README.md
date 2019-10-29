@@ -2,6 +2,7 @@
 GA SEI-20 Project 2 
 
 Hosted on: https://octo-rewards.herokuapp.com/
+
 ![screenshot of octo user page](https://github.com/jasminesis/octo-rewards/blob/master/documents/octorewards.png)
 
 # Technologies Used
