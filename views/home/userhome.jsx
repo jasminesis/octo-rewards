@@ -48,7 +48,7 @@ class Home extends React.Component {
 				console.log('nextThreshold', nextThreshold);
 
 				// making the progress bar percentage
-				let string = el.sum / nextThreshold.spend_threshold * 100 + '%';
+				let string = (el.sum / nextThreshold.spend_threshold * 100).toFixed(2) + '%';
 
 				return (
 					<div className='card col-5 m-1'>
@@ -69,14 +69,14 @@ class Home extends React.Component {
 										aria-valuenow={string}
 										aria-valuemin='0'
 										aria-valuemax='100'
-									/>
-									{string}
+									>
+									{string}</div>
 								</div>
 								<div className='d-flex justify-content-end m-1'>
 									<span>Threshold: ${nextThreshold.spend_threshold}</span>
 								</div>
-								<p>current rate: {currentThreshold.rate}%</p>
-								{el.type}: ${el.sum * currentThreshold.rate / 100} <br />
+								<p>Current rate: {currentThreshold.rate}%</p>
+								<p>{el.type}: ${(el.sum * currentThreshold.rate / 100).toFixed(2)}</p>
 								Spend ${allThresholds[lastIndex].spend_threshold} to get a rate of{' '}
 								{allThresholds[lastIndex].rate}%
 							</p>
@@ -100,7 +100,8 @@ class Home extends React.Component {
 								<div class='alert alert-info' role='alert'>
 									No minimum spend
 								</div>
-								{el.type}: ${el.sum * allThresholds[0].rate / 100}
+								{el.type}: ${(el.sum * allThresholds[0].rate / 100).toFixed(2)}
+
 							</p>
 						</div>
 					</div>
@@ -132,13 +133,14 @@ class Home extends React.Component {
 										aria-valuenow={string}
 										aria-valuemin='0'
 										aria-valuemax='100'
-									/>
-									{string}
+									>
+									{string}</div>
 								</div>
 								<div className='d-flex justify-content-end m-1'>
 									<span>Threshold: ${allThresholds[lastIndex].spend_threshold}</span>
 								</div>
-								{el.type}: ${el.sum * allThresholds[lastIndex].rate / 100}
+								{el.type}: ${(el.sum * currentThreshold.rate / 100).toFixed(2)} <br />
+
 							</p>
 						</div>
 					</div>

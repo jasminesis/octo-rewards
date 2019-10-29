@@ -26,7 +26,7 @@ module.exports = (db) => {
                 let hashedUsernameCookie = sha256(postLogin[0].username);
                 response.cookie("username", hashedUsernameCookie)
                 response.cookie("loggedIn", postLogin[0].id);
-                response.redirect('/')
+                response.redirect('/home')
             } else {
                 let message = 'Please try again'
                 response.redirect('login', message)
@@ -47,7 +47,7 @@ module.exports = (db) => {
                 let hashedUsernameCookie = sha256(postRegister[0].username);
                 response.cookie("username", hashedUsernameCookie)
                 response.cookie("loggedIn", postRegister[0].id);
-                response.redirect('/')
+                response.redirect('/home')
             } else {
                 console.log(postRegister)
                 response.send("Couldn't register")
