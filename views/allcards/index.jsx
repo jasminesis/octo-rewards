@@ -46,6 +46,14 @@ class AllCards extends React.Component {
                         </tbody>
                     </table>
                 </div>
+                    <div className='text-center col-12'>
+						<a href='/allcards/new'>
+							<button type='button' class='btn btn-outline-dark btn-lg m-3'>
+								Add a new card to the database &raquo;
+							</button>
+						</a>
+					</div>
+
             </Layout>
         );
     }

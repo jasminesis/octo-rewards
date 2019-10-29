@@ -14,7 +14,7 @@ module.exports = (dbPoolInstance) => {
 
         let query = 'SELECT * FROM cards INNER JOIN (SELECT card_id, sum(amount) FROM (SELECT * FROM expenses WHERE user_id = ($1)) AS mushrooms GROUP BY card_id) AS potatoes ON cards.id = potatoes.card_id';
 
-        console.log(query)
+        // console.log(query)
 
 
         dbPoolInstance.query(query, userId, (error, queryResult) => {
@@ -60,4 +60,3 @@ module.exports = (dbPoolInstance) => {
         getCardRates,
     };
 };
-

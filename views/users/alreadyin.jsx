@@ -13,6 +13,14 @@ class alreadyIn extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div className='text-center col-12'>
+						<a href='/logout'>
+							<button type='button' class='btn btn-outline-dark btn-lg m-3'>
+								Log out
+							</button>
+						</a>
+					</div>
+                
             </Layout>
         );
     }

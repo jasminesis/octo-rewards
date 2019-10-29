@@ -32,6 +32,7 @@ class NewExpenses extends React.Component {
 											<option value='Fashion'>Fashion</option>
 											<option value='Transport'>Transport</option>
 											<option value='Travel'>Travel</option>
+											
 										</select>
 									</div>
 									<div className='form-group'>

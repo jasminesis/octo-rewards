@@ -28,8 +28,7 @@ module.exports = (db) => {
                 response.cookie("loggedIn", postLogin[0].id);
                 response.redirect('/home')
             } else {
-                let message = 'Please try again'
-                response.redirect('login', message)
+                response.redirect('login')
             }
         })
     };

@@ -18,6 +18,7 @@ class Home extends React.Component {
 			display: 'block',
 			margin: '10px auto'
 		};
+console.log("user home this.props", this.props)
 
 		let cardsData = this.props.data;
 		let cardRates = this.props.cardRates;
@@ -122,7 +123,7 @@ class Home extends React.Component {
 							<h5>{el.type}</h5>
 							<p className='card-text'>
 								Spent ${el.sum} <br />
-								<div class='alert alert-info' role='alert'>
+								<div class='alert alert-success' role='alert'>
 									You have already maximised this card! Spend on another card instead.
 								</div>
 								<div className='progress'>

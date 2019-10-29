@@ -32,7 +32,7 @@ class Cards extends React.Component {
 					<div className='card-body'>
 						<h5 className='card-title'>{el.bank} {el.name}</h5>
 					<img src={el.image_url} className="card-img" style={imgStyle} alt="..."></img>
-						<p className='card-text'>
+						<p className='card-subtitle'>
 							Type: {el.type} <br/>
 							Description: {el.description} <br />
 							Maximum cap: {el.unit} {el.max}
@@ -47,7 +47,7 @@ class Cards extends React.Component {
 				<div className='text-center col-12 d-flex flex-wrap justify-content-center'>{cards}</div>
 				<div className='text-center col-12'>
 						<a href='/cards/new'>
-							<button type='button' class='btn btn-outline-dark btn-lg m-3'>
+							<button type='button' className='btn btn-outline-dark btn-lg m-3'>
 								Add a new card &raquo;
 							</button>
 						</a>
