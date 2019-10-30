@@ -8,8 +8,7 @@ console.log(`
 ╚═╝     ╚═╝╚══════╝ ╚═════╝  ╚══╝╚══╝ 
                                       
 
-`
-);
+`);
 
 
 // defining selectors on the new card page
@@ -42,7 +41,7 @@ function loadBanks() {
     request.addEventListener("load", responseHandlerForBanks);
 
     // ready the system by calling open, and specifying the url
-    var url = `http://127.0.0.1:3000/mydata/banks/:banks`;
+    var url = `/mydata/banks/:banks`;
     request.open("GET", url);
 
     // send the request
@@ -95,7 +94,7 @@ function optionClicked() {
     request.addEventListener("load", responseHandlerForCardPage);
 
     // ready the system by calling open, and specifying the url
-    var url = `http://127.0.0.1:3000/mydata/${bankName}`;
+    var url = `/mydata/${bankName}`;
     request.open("GET", url);
 
     // send the request

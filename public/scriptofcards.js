@@ -43,7 +43,7 @@ function optionClicked() {
     request.addEventListener("load", responseHandlerForCardPage);
 
     // ready the system by calling open, and specifying the url
-    var url = `http://127.0.0.1:3000/mydata/expenses/${userId}`;
+    var url = `/mydata/expenses/${userId}`;
     request.open("GET", url);
 
     // send the request
