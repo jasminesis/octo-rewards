@@ -3,6 +3,8 @@ GA SEI-20 Project 2
 
 Hosted on: https://octo-rewards.herokuapp.com/
 
+![screenshot of octo user page](https://github.com/jasminesis/octo-rewards/blob/master/documents/octorewards.png)
+
 # Technologies Used
 - javascript
 - nodejs
@@ -29,7 +31,7 @@ psql -d DATABASE_NAME -U USERNAME -f seed.sql
 # Wireframes
 
 # ERD diagram
-![crow diagram](https://github.com/jasminesis/octo-rewards/blob/master/documents/octo.png)
+![crow diagram](https://github.com/jasminesis/octo-rewards/blob/master/documents/ERDoctorewards.png)
 
 # User Stories
 
