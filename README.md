@@ -42,9 +42,9 @@ Most people begin using a credit card in their 20s, sucked in by the line of cre
 
 Earn money by spending money?! Sign me up! 
 
-Although there are many websites that direct you to the 'best credit card' for cashback, miles, shopping, dining or fashion, what do you do once you receive that coveted piece of plastic in the mail? 
+Although there are many websites that direct you to the 'best credit card' for cashback, miles, shopping, dining or fashion, what do you do once you receive that coveted piece of plastic in the mail? Usually, people track it for a while but stop trying when the effort and time to maximise it outweighs the benefits. It's also not in the banks best interests for you to get the most out of it, so it's up to users to do it themselves.
 
-We want to maximise it
+Users need an easier way to track their spending on credit cards, which OCTO REWARDS aims to do.
 
 # Approach
 I looked at websites comparing credit cards to get the data on their reward rates, from categories of cards such as cashback, rebate, and points or miles. Within those categories, award structures are different such as if there is a minimum spend or a maximum cap on points earned. I first wrote out the PSQL table file and the ERD diagram, but those had to continually change as I learned more about the different credit cards. 
