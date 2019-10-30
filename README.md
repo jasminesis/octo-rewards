@@ -29,7 +29,7 @@ psql -d DATABASE_NAME -U USERNAME -f seed.sql
 ```
 
 # Wireframes
-![wireframe](https://github.com/jasminesis/octo-rewards/blob/master/documents/wireframe.png)
+![wireframe](https://github.com/jasminesis/octo-rewards/blob/master/documents/wireframe2.png)
 # ERD diagram
 ![crow diagram](https://github.com/jasminesis/octo-rewards/blob/master/documents/ERDoctorewards.png)
 
