@@ -17,7 +17,8 @@ INSERT INTO cards (
     type,
     category_based,
     max,
-    unit
+    unit,
+    image_url
   )
 VALUES
   (

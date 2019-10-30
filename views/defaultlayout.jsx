@@ -22,7 +22,7 @@ class DefaultLayout extends React.Component {
 				</head>
 				<body>
 					<nav className='navbar navbar-expand-lg navbar-dark bg-dark text-center d-flex justify-content-center' style={navStyle}>
-						<a className='navbar-brand' href='http://localhost:3000/home' style={{'fontFamily': 'Raleway'}}>
+						<a className='navbar-brand' href='/home' style={{'fontFamily': 'Raleway'}}>
 							octo rewards
 						</a>
 					</nav>
