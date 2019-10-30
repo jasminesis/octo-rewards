@@ -3,7 +3,9 @@ GA SEI-20 Project 2
 
 Hosted on: https://octo-rewards.herokuapp.com/
 
-There are many tools out there helping you find the best credit card for you, but none that help your optimise your credit card use. Some people use multiple Excel spreadsheets to track their spending to maximise their rewards, but they often get forgotten or disorganised after some time. Octo Rewards was created to to help users track their credit cards spending and rewards, maximising their benefits! 
+There are many tools out there helping you find the best credit card for you, but none that help your optimise your credit card use. Some people use multiple Excel spreadsheets to track their spending to maximise their rewards, but they often get forgotten or disorganised after some time. 
+
+Octo Rewards was created to to help users track their credit cards spending and rewards, maximising their benefits.
 
 ![screenshot of octo user page](https://github.com/jasminesis/octo-rewards/blob/master/documents/octorewards.png)
 
